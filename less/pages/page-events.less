@@ -1,0 +1,100 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+// General styles for modals 
+.modal-header,
+.modal-body{
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #999;
+}
+
+.modal-header{
+	border-bottom-color: #e8e8e8;
+	background-color: transparent;
+
+	.modal-title{
+		font-size: @font-size-lg - 1;
+		font-weight: 600;	
+	}
+}
+
+.modal-event-details{
+	.modal-body{
+
+		.comments-wrapper{
+			color: @text-color-base;
+
+			.media-object{
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}
+
+// Events page
+.content{
+	background-color: #f9f9f9;
+
+	.panel{
+		background-color: transparent;
+	}
+
+	.panel-heading,
+	.panel-body{
+		background-color: #fff;
+		.box-shadow(0 1px 3px 0 #dcdfe3);
+	}
+
+	.panel-heading:after{
+		display: none;
+	}
+
+	.panel-body{
+		margin-top: 10px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	// Styles for .col-events
+	.col-events{
+		.panel-heading{
+			.panel-title{
+				font-size: @font-size-lg - 1;
+				font-weight: 600;
+			}
+
+			.panel-tools .btn{
+				font-size: @font-size-sm;
+				font-weight: 600;
+			}
+		}
+
+		.events-wrapper{
+
+			.panel-body{
+				color: #999;
+				border: 1px solid transparent;
+
+				img{
+					width: 55px;
+					height: 48px;
+					position: absolute;
+					top: -1px;
+					right: -1px;
+				}
+
+				.lead{
+					margin-bottom: 5px;
+					font-weight: 400;
+					color: @text-color-base;
+				}
+
+				span{
+					font-size: @font-size-base + 1;
+				}
+			}
+		}
+	}
+}

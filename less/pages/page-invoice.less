@@ -1,0 +1,82 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+body{
+	font-size: @font-size-base + 1;
+}
+
+// header
+.panel-body{
+	> .invoice-header{
+		margin: -15px -15px 45px;
+		padding: 20px 15px 45px;
+		border-bottom: 1px solid @bg-default;
+
+		.invoice-header-left{
+			h1{
+				margin-bottom: 18px;
+				color: #889BA5;
+			}
+
+			address{
+				line-height: 24px;
+				margin-bottom: 0;
+			}
+		}
+
+		.invoice-header-right{
+			@media(min-width: @screen-sm-min){
+				text-align: right;
+			}
+
+			h1{
+				font-weight: 600;
+				color: #E5E5E5;
+			}
+
+			span{
+				line-height: 24px;
+			}
+
+			.label{
+				margin-top: 35px;
+				padding: 12px 30px;
+				font-size: @font-size-base;
+				border-color: #d6d6d6;
+				@media(max-width: @screen-xs-max){
+					margin-top: 20px;
+				}
+
+				strong{
+					font-size: @font-size-base + 1;
+				}
+			}
+		}
+	}
+
+	// body
+	> .invoice-body .table{
+		td{
+			& + td{
+				text-align: right;
+			}
+
+			em{
+				color: #999;
+			}
+		}
+
+		tfoot > tr > td{
+			h1{
+				margin-top: -13px;
+				margin-bottom: 18px;
+				color: #889BA5;
+			}
+
+			// table inside tfoot
+			.table tr:last-child > td{
+				border-top-color: #999;
+			}
+		}
+	}
+}

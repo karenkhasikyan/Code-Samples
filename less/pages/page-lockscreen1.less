@@ -1,0 +1,63 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+html,
+body{
+	min-height: 100%;
+}
+
+body{
+	.gradient(#fdfdfd, #f7f7f7);
+}
+
+.lockscreen-wrapper{
+	max-width: 360px;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	margin-left: auto;
+	margin-right: auto;
+
+	.panel{
+		border-radius: @rounded + 2;
+	}
+
+	.panel-heading{
+		color: #c7c7c7;
+		font-weight: 600;
+		.gradient(#fff, #f9f9f9);
+		.border-top-radius(@rounded + 2);
+
+		&:after{
+			left: 0;
+			right: 0;
+		}
+	}
+
+	.panel-body{
+		background-color: #fcfcfc;
+
+		p{
+			margin-top: 5px;
+			margin-bottom: 10px;
+			font-size: @font-size-lg - 1;
+		}
+
+		form{
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 35px;
+		}
+	}
+
+	.panel-footer{
+		padding-top: 12px;
+		padding-bottom: 12px;
+		background-color: #fcfcfc;
+		.border-bottom-radius(@rounded + 2);
+
+		a{
+			font-size: @font-size-base;
+			color: #999;
+		}
+	}
+}

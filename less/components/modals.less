@@ -1,0 +1,49 @@
+// Modals
+// General modals, framed modals
+
+.modal{
+	z-index: 1082;
+
+	&.rounded{
+		.modal-header{
+			.border-top-radius();
+		}
+
+		.modal-content{
+			/* Hides white space of the top and bottom corners */
+			border-radius: @rounded + 4;
+		}
+	}
+}
+
+// Gerenal styles for all modals
+.modal-content{
+	margin-top: 70px;
+	border-color: transparent;
+	border-radius: 0;
+	.box-shadow(none);
+}
+
+.modal-header{
+	color: @text-color-base;
+	background-color: @bg-default;
+
+	.close{
+		margin-top: 2px;
+	}
+}
+
+.modal-footer .btn + .btn{
+	margin-bottom: 5px;
+	margin-left: 0;
+}
+
+// Framed modal
+.modal-framed .modal-content{
+	border: @modal-frame-width solid @modal-frame-bg;
+}
+
+.modal-backdrop{
+	z-index: 1081;
+	background-color: rgba(0,0,0,.4);
+}

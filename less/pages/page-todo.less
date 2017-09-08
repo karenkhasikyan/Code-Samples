@@ -1,0 +1,193 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+// General styles for modals 
+.modal-header,
+.modal-body{
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #999;
+}
+
+.modal-header{
+	border-bottom-color: #e8e8e8;
+	background-color: transparent;
+
+	.modal-title{
+		font-size: @font-size-lg - 1;
+		font-weight: 600;	
+	}
+}
+
+.modal-task-details{
+	.modal-body{
+		.select2-container--bootstrap.select2-container--disabled .select2-search__field,
+		.select2-container--bootstrap.select2-container--disabled .select2-selection{
+			cursor: default;
+		}
+
+		.comments-wrapper{
+			color: @text-color-base;
+
+			.media-object{
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}
+
+// Todo page
+.content{
+	background-color: #f9f9f9;
+
+	// General styles for both .panel-projects and .panel-tasks
+	.panel{
+		background-color: transparent;
+	}
+
+	.panel-heading,
+	.panel-body{
+		background-color: #fff;
+		.box-shadow(0 1px 3px 0 #dcdfe3);
+	}
+
+	.panel-heading:after{
+		display: none;
+	}
+
+	.panel-body{
+		margin-top: 10px;
+		position: relative;
+	}
+
+	// Styles for .col-todo-projects
+	.col-todo-projects{
+		margin-bottom: 50px;
+
+		.panel-heading{
+			.panel-title{
+				font-size: @font-size-lg - 1;
+				font-weight: 600;
+			}
+
+			.panel-tools .btn{
+				font-size: @font-size-sm;
+				font-weight: 600;
+			}
+		}
+
+		.projects-wrapper{
+			label.btn{
+				display: block;
+				padding: 0;
+				text-align: left;
+				white-space: normal;
+				.box-shadow(none);
+
+				&.active > .panel-body{
+					border-color: @bg-primary;
+					.transition();
+				}
+			}
+
+			.panel-body{
+				color: #999;
+				border: 1px solid transparent;
+
+				img{
+					width: 55px;
+					height: 48px;
+					position: absolute;
+					top: -1px;
+					right: -1px;
+				}
+
+				.lead{
+					margin-bottom: 5px;
+					font-weight: 400;
+					color: @text-color-base;
+				}
+
+				span{
+					font-size: @font-size-base + 1;
+				}
+			}
+		}
+	}
+
+	// Styles for .col-todo-tasks
+	.col-todo-tasks{
+		@media(min-width: @screen-md-min){
+			padding-left: 0;
+		}
+
+		.panel-heading{
+			.panel-title{
+				font-size: @font-size-base + 1;
+				font-weight: 600;
+			}
+
+			.panel-tools .btn{
+				font-size: @font-size-sm;
+				font-weight: 600;
+			}
+		}
+
+		.panel-body{
+			display: table;
+			width: 100%;
+			cursor: pointer;
+			border: 1px solid transparent;
+
+			&:hover{
+				border-color: @bg-info;
+			}
+
+			.todo-description,
+			.todo-due-date{
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.todo-description{
+				width: 70%;
+				color: #999;
+
+				.lead{
+					margin-top: -10px;
+					margin-bottom: 5px;
+					font-weight: 400;
+					color: @text-color-base;
+
+					.label{
+						vertical-align: top;
+						font-size: @font-size-sm - 1;
+					}
+				}
+			}
+
+			.todo-due-date{
+				width: 30%;
+				text-align: right;
+
+				.btn{
+					height: 35px;
+					position: absolute;
+					top: 0;
+					right: 15px;
+					bottom: 0;
+					margin-top: auto;
+					margin-bottom: auto;
+					font-size: @font-size-sm;
+					opacity: 0;
+					.transition();
+				}
+			}
+
+			&:hover .todo-due-date .btn{
+				opacity: 1;
+			}
+		}
+	}
+}

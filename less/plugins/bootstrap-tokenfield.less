@@ -1,0 +1,57 @@
+/*	============================== 
+ 					Bootstrap Tokenfield
+		==============================	*/
+
+.tokenfield{
+	&.focus{
+		border-color: darken(@input-border, 25%);
+	}
+
+	&.disabled{
+		background-color: @input-disabled-bg;
+	}
+
+	.token.active{
+		border-color: @input-color;
+	}
+}
+
+// Validation states
+.has-success .tokenfield{
+	&.focus{
+		border-color: @state-success-border;
+  	background-color: lighten(@state-success-bg, 5%);
+	}
+	
+	.token{
+		color: @input-color;
+	}
+}
+
+.has-warning .tokenfield{
+	&.focus{
+		border-color: @state-warning-border;
+  	background-color: lighten(@state-warning-bg, 5%);
+	}
+	
+	.token{
+		color: @input-color;
+	}
+}
+
+.has-error .tokenfield{
+	&.focus{
+		border-color: @state-danger-border;
+  	background-color: lighten(@state-danger-bg, 5%);
+	}
+	
+	.token{
+		color: @input-color;
+	}
+}
+
+.twitter-typeahead .token-input.tt-input{
+	/* Typeahead */
+	position: relative;
+	left: 1px;
+}

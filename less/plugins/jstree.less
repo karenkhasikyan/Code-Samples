@@ -1,0 +1,35 @@
+/*	============================== 
+ 					Jstree
+		==============================	*/
+
+.jstree-default{
+	.jstree-anchor{
+		.box-shadow(none);
+	}
+
+	.jstree-hovered,
+	.jstree-wholerow-hovered{
+		background-color: lighten(@bg-default, 1%);
+	}
+
+	.jstree-clicked,
+	.jstree-wholerow-clicked{
+		background-color: @bg-default - 10;
+	}
+
+	.jstree-wholerow-clicked{
+		background-image: none;
+	}
+
+	.jstree-clicked.jstree-disabled,
+	.jstree-disabled{
+		color: lighten(@text-color-base, 35%);
+		cursor: not-allowed;
+	}
+
+	.jstree-icon.fa{
+		margin-left: 2px;
+		font-size: @font-size-base + 1;
+		color: lighten(@text-muted, 15%);
+	}
+}

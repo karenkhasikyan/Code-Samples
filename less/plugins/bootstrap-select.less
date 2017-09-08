@@ -1,0 +1,30 @@
+/*	============================== 
+ 					bootstrap-select
+		==============================	*/
+
+.bootstrap-select{
+	.dropdown-menu{
+		padding-bottom: 0;
+		border-radius: 0;
+
+		.inner{
+			.selected > a{
+				background-color: darken(@bg-default, 2%);
+			}
+
+			> li:first-child > a{
+				.border-top-radius(0);
+			}
+		}
+	}
+
+	// Setting border radius for .dropdown-menu if the button has class .rounded or .circle
+	.btn{
+		&.rounded,
+		&.circle{
+			& + .dropdown-menu{
+				border-radius: @rounded;
+			}
+		}
+	}
+}

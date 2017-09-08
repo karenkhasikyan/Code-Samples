@@ -1,0 +1,30 @@
+/*	============================== 
+ 					Bootstrap-markdown
+		==============================	*/
+
+.md-editor{
+	margin-top: 5px;
+
+	&.active{
+		border-color: darken(@input-border, 25%);
+		.box-shadow(none);
+	}
+
+	.md-header{
+		.btn{
+			margin-bottom: 0;
+			border-color: #ddd;
+		}
+
+		.md-control-fullscreen{
+			display: inline-block;
+		}
+	}
+
+	> textarea{
+		padding: 15px;
+		font-size: inherit;
+		font-family: inherit;
+		background-color: #fff;
+	}
+}

@@ -1,0 +1,81 @@
+body{
+	font: 400 @font-size-base @font-family-base;
+	color: @text-color-base;
+}
+
+a{
+	display: inline-block;
+	color: @link-color;
+
+	&:hover,
+	&:focus{
+		color: @link-hover-color;
+		text-decoration: none;
+	}
+
+	&:focus{
+		outline: none;
+	}
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 300;
+
+	small,
+	.small{
+		font-weight: 300;
+		color: @text-color-base;
+	}
+}
+
+h1{
+	font-size: @font-size-h1;
+}
+
+h2{
+	font-size: @font-size-h2;
+}
+
+h3{
+	font-size: @font-size-h3;
+}
+
+h4{
+	font-size: @font-size-h4;
+}
+
+h5{
+	font-size: @font-size-h5;
+}
+
+h6{
+	font-size: @font-size-h6;
+}
+
+.lead{
+	margin-bottom: 10px;
+	font-size: @font-size-lead;
+}
+
+b,strong{
+	font-weight: 600;
+}
+
+blockquote{
+	font-size: @font-size-blockquote;
+	border-left-color: @bg-default;
+
+	footer,
+	small,
+	.small{
+		font-size: 90%;
+	}
+}
+
+code{
+	display: inline-block;
+}
+
+pre{
+	border-color: @bg-default;
+}

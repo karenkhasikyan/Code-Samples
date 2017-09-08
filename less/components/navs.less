@@ -1,0 +1,423 @@
+// Tabs, Pills
+// Basic tabs, custom tabs( including contextual classes ), underlined tabs, overlined tabs, pills.
+
+
+// Aligns to the right
+.nav-right{
+	> li{
+		float: right;
+	}
+}
+
+// General styles for all nav elements
+.nav{
+	> li{
+		> a{
+			padding-top: 9px;
+			padding-bottom: 9px;
+			color: @text-color-base;
+
+			&:hover,
+			&:focus{
+				background-color: @nav-link-hover-bg;
+			}
+		}
+
+		&.disabled > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @nav-link-disabled-color;
+			}
+		}
+	}
+
+	.open > a{
+		&,
+		&:hover,
+		&:focus{
+			border-color: @nav-tabs-border;
+			background-color: @nav-link-hover-bg;
+		}
+	}
+}
+
+// General Tabs
+.nav-tabs{
+	border-bottom-color: @nav-tabs-border;
+
+	> li{
+		> a{
+			.border-top-radius(0);
+
+			.rounded&{
+				.border-top-radius();
+			}
+
+			&:hover{
+				border-color: transparent transparent @nav-tabs-border;
+			}
+		}
+
+		&.active > a{
+      &,
+      &:hover,
+      &:focus{
+      	border-top-color: @nav-tabs-border;
+      	border-right-color: @nav-tabs-border;
+      	border-left-color: @nav-tabs-border;
+      }
+    }
+	}
+
+	&.bottom-tabs{
+		border-bottom: none;
+		border-top: 1px solid @nav-tabs-border;
+
+		> li{
+			margin-top: -1px;
+
+			> a{
+				.rounded&{
+					border-radius: 0 0 @rounded @rounded;
+				}
+
+				&:hover{
+					border-top-color: @nav-tabs-border;
+					border-bottom-color: transparent;
+				}
+			}
+
+			&.active > a{
+	      &,
+	      &:hover,
+	      &:focus{
+	      	border-top-color: transparent;
+	      	border-bottom-color: @nav-tabs-border;
+	      }
+	    }
+		}
+	}
+
+	&.nav-stacked.left-tabs{
+		> li{
+			>	a{
+				border-right-color: @nav-tabs-border;
+
+				.rounded&{
+					border-bottom-left-radius: @rounded;
+					border-top-right-radius: 0;
+				}
+
+				&:hover{
+					border-bottom-color: transparent;
+				}
+			}
+
+			&.active > a{
+				&,
+				&:hover,
+				&:focus{
+					border-right-color: transparent;
+					border-bottom-color: @nav-tabs-border;
+				}
+			}
+		}
+	}
+		
+	&.nav-stacked.right-tabs{
+		> li{
+			> a{
+				border-left-color: @nav-tabs-border;
+				
+				.rounded&{
+					border-bottom-right-radius: @rounded;
+				}
+
+				&:hover{
+					border-bottom-color: transparent;
+				}
+			}
+
+			&.active > a{
+				&,
+				&:hover,
+				&:focus{
+					border-left-color: transparent;
+					border-bottom-color: @nav-tabs-border;
+				}
+			}
+		}
+	}
+
+	& + .tab-content{
+		margin-top: 20px;
+	}
+}
+
+// Justified tabs
+.nav-tabs.nav-justified{
+	@media(min-width: @screen-sm-min){
+		border-bottom: 1px solid @nav-tabs-border;
+	}
+
+	> li{
+		top: 1px;
+
+		> a{
+			border-radius: 0;
+
+			.rounded&{
+				.border-top-radius();
+
+				@media(max-width: @screen-xs-max){
+					.border-bottom-radius();
+				}
+			}			
+		}
+	}
+}
+
+// Solid tabs
+.nav-tabs.solid-tabs{
+	border-bottom: none;
+
+	> li{
+		> a{
+			margin-right: -1px;
+      border-color: @tabs-solid-border;
+      background-color: @tabs-solid-bg;
+
+			&:hover{
+				background-color: @tabs-solid-bg + 5;
+			}
+		}
+
+		&.active > a{
+	    &,
+	    &:hover,
+	    &:focus{
+	      border-color: @tabs-solid-border;
+	      background-color: @tabs-solid-bg + 8;
+	    }
+	  }
+	}
+
+	&.rounded{
+		> li > a{
+			.border-top-radius(0);
+		}
+
+		> li:first-child > a{
+			.border-left-radius();
+		}
+
+		> li:last-child > a{
+			.border-right-radius();
+		}
+
+		&.nav-right{
+			> li:first-child > a{
+				border-radius: 0 @rounded @rounded 0;
+			}
+
+			> li:last-child > a{
+				border-radius: @rounded 0 0 @rounded;
+			}
+		}
+	}
+
+	// Stacked solid tabs
+	&.nav-stacked{
+		margin-bottom: 30px;
+		
+		> li{
+			& + li{
+				padding-top: 0;
+			}
+
+			> a{
+				border-radius: 0;
+			}
+			
+			.rounded&{
+				&:first-child > a{
+					.border-top-radius();
+				}
+
+				&:last-child > a{
+					.border-bottom-radius();
+				}
+			}
+		}
+	}
+}
+
+// Underline tabs
+.nav-tabs.underline-tabs{
+	> li{
+		> a{
+			margin-right: 0;
+			border: none;
+			border-bottom: 2px solid transparent;
+			.border-top-radius(0);
+
+			&:hover,
+			&:focus{
+				background-color: transparent;
+			}
+		}
+
+		&.dropdown.open > a{
+			&,
+			&:hover,
+			&:focus{
+				.box-shadow(none);
+			}
+		}
+
+		&.active > a{
+			&,
+			&:hover,
+			&:focus{
+				border: none;
+				border-bottom: 2px solid transparent;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.default-tabs{
+		.tabs-variant-underline(@tabs-default-border);
+	}
+
+	&.primary-tabs{
+		.tabs-variant-underline(@tabs-primary-border);
+	}
+
+	&.success-tabs{
+		.tabs-variant-underline(@tabs-success-border);
+	}
+
+	&.info-tabs{
+		.tabs-variant-underline(@tabs-info-border);
+	}
+
+	&.warning-tabs{
+		.tabs-variant-underline(@tabs-warning-border);
+	}
+
+	&.danger-tabs{
+		.tabs-variant-underline(@tabs-danger-border);
+	}
+
+	&.inverse-tabs{
+		.tabs-variant-underline(@tabs-inverse-border);
+	}
+}
+
+// Overline tabs
+.nav-tabs.overline-tabs{
+	border-bottom: transparent;
+	
+	&:not(.nav-stacked){
+		border-top: 1px solid @nav-tabs-border;
+	}
+	
+	> li{
+		top: -1px;
+
+		> a{
+			margin-right: 0;
+			border: none;
+			border-top: 2px solid transparent;
+			.border-top-radius(0);
+
+			&:hover,
+			&:focus{
+				background-color: transparent;
+			}
+		}
+
+		&.dropdown.open > a{
+			&,
+			&:hover,
+			&:focus{
+				.box-shadow(none);
+			}
+		}
+
+		&.active > a{
+			&,
+			&:hover,
+			&:focus{
+				border: none;
+				border-top: 2px solid transparent;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.default-tabs{
+		.tabs-variant-overline(@tabs-default-border);
+	}
+
+	&.primary-tabs{
+		.tabs-variant-overline(@tabs-primary-border);
+	}
+
+	&.success-tabs{
+		.tabs-variant-overline(@tabs-success-border);
+	}
+
+	&.info-tabs{
+		.tabs-variant-overline(@tabs-info-border);
+	}
+
+	&.warning-tabs{
+		.tabs-variant-overline(@tabs-warning-border);
+	}
+
+	&.danger-tabs{
+		.tabs-variant-overline(@tabs-danger-border);
+	}
+
+	&.inverse-tabs{
+		.tabs-variant-overline(@tabs-inverse-border);
+	}
+}
+
+// Stacked tabs ( vertical direction )
+.nav-tabs.nav-stacked{
+	border-bottom: none;
+		
+	li + li{
+		margin-top: 0;
+		padding-top: 1px;
+	}
+}
+
+// Pills
+.nav-pills{
+	> li{
+		> a{
+			border-radius: 0;
+
+			.rounded&{
+				border-radius: @rounded;
+			}
+		}
+
+		&.active > a{
+			&,
+			&:hover,
+			&:focus{
+				background-color: @bg-primary - 5;
+			}
+		}
+	}
+
+	& + .tab-content{
+		margin-top: 20px;
+	}
+}

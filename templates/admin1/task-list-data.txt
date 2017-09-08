@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "title": "Landing page design",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Joe Dobson, Mark Stahl",
+      "parentProject": "Landing page design",
+      "tag": "<span class='label label-primary'>Front end</span>",
+      "dueDate": "12\/06\/16"
+    },
+    {
+      "title": "Database administration",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Joe Dobson",
+      "parentProject": "Back end development",
+      "tag": "<span class='label label-success'>Back end</span>",
+      "dueDate": "08\/06\/16"
+    },
+    {
+      "title": "Color customization",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Joe Dobson",
+      "parentProject": "Logo design",
+      "tag": "<span class='label label-warning'>Design</span>",
+      "dueDate": "08\/06\/16"
+    },
+    {
+      "title": "Database development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Joe Dobson, Mark Stahl",
+      "parentProject": "Back end development",
+      "tag": "<span class='label label-danger'>Back end</span>",
+      "dueDate": "09\/06\/16"
+    },
+    {
+      "title": "Logo design",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Simon Adler",
+      "parentProject": "Logo design",
+      "tag": "<span class='label label-primary'>Design</span>",
+      "dueDate": "05\/06\/16"
+    },
+    {
+      "title": "Other fixes",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Maria Ketler",
+      "parentProject": "Landing page design",
+      "tag": "<span class='label label-default'>Other</span>",
+      "dueDate": "04\/06\/16"
+    },
+    {
+      "title": "Changing brand colors",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Joe Dobson",
+      "parentProject": "Logo design",
+      "tag": "<span class='label label-warning'>Design</span>",
+      "dueDate": "08\/06\/16"
+    },
+    {
+      "title": "Edit default settings",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "assign": "Joe Dobson, Mark Stahl",
+      "parentProject": "Back end development",
+      "tag": "<span class='label label-danger'>Back end</span>",
+      "dueDate": "09\/06\/16"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+/*	============================== 
+ 					bootstrap-switch
+		==============================	*/
+
+.bootstrap-switch{
+	border-color: #ddd;
+	background-color: #fff;
+
+	&.bootstrap-switch-focused{
+		border-color: @bg-primary;
+		.box-shadow(none);
+	}
+
+	.bootstrap-switch-handle-on.bootstrap-switch,
+	.bootstrap-switch-handle-off.bootstrap-switch{
+		&-default{
+			color: @text-color-base;
+			background-color: @bg-default;
+		}
+
+		&-primary{
+			background-color: @bg-primary;
+		}
+
+		&-success{
+			background-color: @bg-success;
+		}
+
+		&-info{
+			background-color: @bg-info;
+		}
+
+		&-warning{
+			background-color: @bg-warning;
+		}
+
+		&-danger{
+			background-color: @bg-danger;
+		}
+
+		&-inverse{
+			color: #fff;
+			background-color: @bg-inverse;
+		}
+	}
+}
+
+// Font Awesome icons sizing in Bootstrap Switch
+.fa{
+	.bootstrap-switch &{
+		font-size: @font-size-base + 2;
+	}
+
+	.bootstrap-switch-large &{
+		font-size: @font-size-lg;
+	}
+
+	.bootstrap-switch-small &{
+		font-size: @font-size-sm;
+	}
+
+	.bootstrap-switch-mini &{
+		font-size: @font-size-sm - 1;
+	}
+}

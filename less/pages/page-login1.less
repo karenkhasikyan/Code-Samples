@@ -1,0 +1,151 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+html,
+body{
+	min-height: 100%;
+}
+
+body{
+	.gradient(#FFF, #F9F9F9);
+}
+
+/* Forgot password modal */
+.modal-dialog{
+	max-width: 360px;
+
+	@media(max-width: @screen-xs-max){
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.modal-content{
+		border: 1px solid #D6D6D6;
+		border-radius: @rounded + 2;
+
+		.modal-body{
+			padding: 25px 30px 30px;
+
+			h2{
+				margin-top: 0;
+				margin-bottom: 25px;
+				font-weight: 400;
+				text-align: center;
+			}
+
+			form{
+				.form-control{
+					margin-bottom: 25px;
+					border-radius: @rounded;
+					.placeholder(#999);
+					.box-shadow(inset 0px 1px 2px 0px #E2E2E2);
+				}
+
+				.btn-wrapper span{
+					display: table-cell;
+					width: 1%;
+
+					&:first-child{
+						padding-right: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.login-wrapper{
+	max-width: 360px;
+	margin: 80px auto;
+
+	.panel{
+		margin-top: 25px;
+		border-color: #e2e2e2;
+		border-radius: @rounded + 2;
+	}
+
+	.panel-body{
+		padding: 25px 30px 40px;
+
+		h2{
+			margin-top: 0;
+			margin-bottom: 20px;
+			font-weight: 400;
+			text-align: center;
+		}
+
+		form{
+			.form-control{
+				.box-shadow(inset 0px 1px 2px 0px #EFEFEF);
+			}
+
+			.btn{
+				margin-top: 15px;
+				font-weight: 600;
+			}
+		}
+
+		.btn-group.divided{
+			margin-top: 40px;
+
+			.btn{
+				font-weight: 600;
+				color: #fff;
+				border: none;
+
+				@media(max-width: 480px){
+					font-size: @font-size-base - 2;
+
+					&:first-child{
+						padding-right: 22px;
+					}
+
+					&:last-child{
+						padding-left: 22px;
+					}
+				}
+
+				&:first-child{
+					background-color: #3B579D;
+				}
+
+				&:last-child{
+					background-color: #2CAAE1;
+				}
+
+				.fa{
+					padding-left: 5px;
+					font-size: @font-size-base + 1;
+				}
+			}
+
+			.divider{
+				width: 22px;
+				height: 22px;
+				font-weight: 400;
+				line-height: 19px;
+
+				@media(max-width: 480px){
+					width: 20px;
+					height: 20px;
+					line-height: 17px;
+				}
+			}
+		}			
+	}
+
+	.panel-footer{
+		padding: 15px 30px;
+		font-weight: 600;
+		text-align: center;
+		border-top: 1px solid #e2e2e2;
+		.border-bottom-radius();
+		.gradient(#FFF, #F4F4F4);
+	  
+	  a{
+	  	color: @text-primary;
+	  }
+	}
+}

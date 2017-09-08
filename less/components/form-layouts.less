@@ -1,0 +1,47 @@
+.form-layout{
+	.form-layout-heading,
+	.form-layout-body,
+	.form-layout-footer{
+		.clearfix();
+	}
+
+	.btn{
+		margin-bottom: 0;
+	}
+}
+
+.form-layout-heading{
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid @brand-default;
+
+	.form-layout-legend{
+		font-size: @font-size-h5;
+		margin-bottom: 15px; 
+	}
+}
+
+.form-layout-footer{
+	margin-top: 10px;
+}
+
+.form-layout-filled{
+	.form-layout-body,
+	.form-layout-footer{
+		padding: 20px 20px 5px;
+		background-color: #f9f9f9;
+	}
+
+	.form-layout-body + .form-layout-body{
+		margin-top: 10px;
+	}
+}
+
+.form-layout-boxed{
+	&.form-layout-heading,
+	.form-group{
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

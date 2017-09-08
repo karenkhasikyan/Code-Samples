@@ -1,0 +1,26 @@
+/*	============================== 
+ 					Typeahead
+		==============================	*/
+
+.twitter-typeahead{
+	width: 100%;
+
+	.tt-menu{
+		min-width: 200px;
+		left: 0;
+		right: 0;
+		border: 1px solid darken(@input-border, 25%);
+		border-top: none;
+		background-color: #fff;
+
+		.tt-suggestion{
+			padding: 5px 12px;
+
+			&:hover,
+			&:focus{
+				cursor: pointer;
+				background-color: lighten(@bg-default, 1%);
+			}
+		}
+	}
+}

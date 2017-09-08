@@ -1,0 +1,158 @@
+/*================general styling for line charts===============*/
+
+/*Chartist generates predefined classes for series by default. 
+Those class names are alpha numerated and always start with ct-series-a, 
+where the letter a will be iterated with each series count (a, b, c, d etc.).
+For example, .ct-series-a is first line(bar, pie ...) of the chart, .ct-series-b is the second one etc.
+*/
+.ct-series-a{
+  .ct-line{
+    /* Set the colour of this series line */
+    stroke: @brand-primary;
+  }
+
+  .ct-point{
+    /* Colour of your points */
+    stroke: @brand-primary;
+  }
+}
+
+.ct-series-b{
+  .ct-line{
+    /* Set the colour of this series line */
+    stroke: @brand-success;
+  }
+
+  .ct-point{
+    /* Colour of your points */
+    stroke: @brand-success;
+  }
+}
+
+.ct-series-c{
+  .ct-line{
+    /* Set the colour of this series line */
+    stroke: @brand-warning;
+  }
+
+  .ct-point{
+    /* Colour of your points */
+    stroke: @brand-warning;
+  }
+}
+
+
+
+/*================custom styling for line charts===============*/
+
+/*custom fill color for line chart with area*/
+#area-chart .ct-area{
+	fill: @brand-primary;
+}
+
+/*custom fill colors for bi-polar area only chart*/
+.ct-series-a .ct-area{
+	fill: @brand-primary;
+}
+
+.ct-series-b .ct-area{
+	fill: @brand-success;
+}
+
+.ct-series-c .ct-area{
+	fill: @brand-warning;
+}
+
+.ct-series-d .ct-area{
+	fill: #FF3467;
+}
+
+
+/*================custom styling for bar charts===============*/
+#bi-polar-bars .ct-bar{
+  stroke: @brand-primary;
+}
+
+
+#overlapping-bars{
+  .ct-series-a .ct-bar{
+    stroke: @brand-primary;
+  }
+
+  .ct-series-b .ct-bar {
+    stroke: @brand-danger;
+  }
+}
+
+
+
+#peak-circles{
+  .ct-bar{
+    stroke: @brand-primary;
+  }
+
+  .ct-slice-pie{
+    stroke: #CD0000;
+  }
+}
+
+
+#stacked-bars{
+  .ct-series-a .ct-bar{
+    stroke: @brand-primary;
+  }
+
+  .ct-series-c .ct-bar{
+    stroke: @brand-warning;
+  }
+}
+
+
+
+#horizontal-bars .ct-series-a .ct-bar{
+	stroke: @brand-primary;
+}
+
+
+
+
+/*================custom styling for pie charts===============*/
+#simple-pie{
+  .ct-label{
+    fill: #FFF;
+    font-size: @font-size-lg - 2;
+  }
+
+  .ct-series-a .ct-slice-pie{
+    fill: @brand-primary;
+  }
+
+  .ct-series-c .ct-slice-pie{
+    fill: @brand-warning;
+  }
+}
+
+
+
+#custom-labels{
+  .ct-label{
+    fill: #555;
+    font-size: @font-size-lg - 2;
+  }
+
+  .ct-series-a .ct-slice-pie{
+    fill: @brand-primary;
+  }
+
+  .ct-series-c .ct-slice-pie{
+    fill: @brand-warning;
+  }
+}
+
+
+
+
+/*================custom styling for donut charts===============*/
+#donut-animate .ct-series-g .ct-slice-donut{
+	stroke: @brand-primary;
+}

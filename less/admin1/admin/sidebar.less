@@ -1,0 +1,281 @@
+.sidebar{
+	width: @sidebar-width;
+	padding-top: @sidebar-padding;
+	padding-bottom: @sidebar-padding;
+	font-weight: 300;
+	font-size: @font-size-base + 1;
+	float: left;
+
+	@media(max-width: @screen-sm-max){
+		display: none;
+		width: auto;
+		padding-top: @sidebar-padding - 20;
+		padding-bottom: @sidebar-padding - 20;
+		float: none;
+	}
+
+	.sidebar-nav{
+		padding-left: 0;
+		list-style: none;
+
+		> .title{
+			padding: @sidebar-link-padding;
+		}
+
+		> li > a{
+			display: block;
+			padding: @sidebar-link-padding;
+			letter-spacing: .2px;
+			border-bottom: 1px solid transparent;
+
+			.fa{
+				width: 21px;
+				margin-left: -2px;
+				margin-right: 5px;
+				font-size: @font-size-lg - 1;
+				text-align: center;
+			}
+		}
+
+		.dropdown{
+			> a:after{
+				content: "\f105";
+				margin-right: -10px;
+				float: right;
+				font-family: 'FontAwesome';
+				font-size: @font-size-lg;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			&.open > a:after{
+				content: "\f107";
+			}
+		}
+
+		/* Showing inner navigation */
+		.open > .inner-nav{
+			display: block;
+		}
+
+		// Inner navigation
+		.inner-nav{
+			display: none;
+			list-style: none;
+			padding-top: 1px;
+			padding-left: 0;
+			
+			> li > a{
+				display: block;
+				padding: @sidebar-inner-nav-link-padding;
+				margin-bottom: 1px;
+
+				.fa{
+					margin-right: 5px;
+				}
+			}
+
+			> .dropdown > .inner-nav > li > a{
+				/* Second level .inner-menu dropdown */
+				padding-left: @sidebar-inner-nav-dropdown-padding-left;
+			}
+
+			> .dropdown > .inner-nav > .dropdown > .inner-nav > li > a{
+				/* Third level .inner-menu dropdown */
+				padding-left: @sidebar-inner-nav-dropdown-padding-left + 10;
+			}
+
+			> .dropdown > .inner-nav > .dropdown > .inner-nav > .dropdown > .inner-nav > li > a{
+				/* Fourth level .inner-menu dropdown */
+				padding-left: @sidebar-inner-nav-dropdown-padding-left + 20;
+			}
+		}
+	}
+}
+
+.navbar-fixed-top + .content-wrapper .sidebar.sidebar-fixed{
+	/* Fixed Sidebar */
+	@media(min-width: @screen-md-min){
+		position: fixed;
+
+		.sidebar-fixed-scroller{
+			/* This element required for custom scrollbar plugin (slimscroll) */
+			position: fixed;
+			width: @sidebar-width;
+			top: @navbar-height + @sidebar-padding;
+			bottom: @footer-height;
+			overflow-y: auto;
+		}
+
+		& + .content{
+			position: absolute;
+			left: @sidebar-width;
+			right: 0;
+		}
+	}
+
+	@media(max-width: @screen-sm-max){
+		.sidebar-fixed-scroller,
+		.slimScrollDiv{
+			width: 100% !important;
+		}
+	}
+}
+
+body.has-sidebar-sm .navbar-fixed-top + .content-wrapper .sidebar.sidebar-fixed{
+	/* Fixed Sidebar */
+	@media(min-width: @screen-md-min){
+		& + .content{
+			left: @sidebar-sm-width;
+		}
+	}
+}
+
+body:not(.has-sidebar-sm) .sidebar.sidebar-hover .sidebar-nav{
+	/* Hover sidebar */
+	@media(min-width: @screen-md-min){
+		> .dropdown{
+			&:hover{
+				/* Hover functionality for larger screens( not devices ) */
+				> a:after{
+					content: "\f107";
+				}
+				
+				> .inner-nav{
+					display: block;
+					width: @sidebar-width - 20;
+					position: absolute;
+					top: 0;
+					left: @sidebar-width;
+					z-index: 1;
+					border-left: 1px solid transparent;
+				}
+			}
+
+			> .inner-nav{
+				display: none;
+			}
+
+			.inner-nav{
+				> li > a{
+					padding: @sidebar-hover-inner-nav-link-padding;
+				}
+
+				.dropdown > a:after{
+					margin-right: 0;
+				}
+
+				> .dropdown > .inner-nav > li > a{
+					/* Second level .inner-menu dropdown */
+					padding-left: @sidebar-inner-nav-dropdown-padding-left - 30;
+				}
+
+				> .dropdown > .inner-nav > .dropdown > .inner-nav > li > a{
+					/* Third level .inner-menu dropdown */
+					padding-left: @sidebar-inner-nav-dropdown-padding-left - 20;
+				}
+
+				> .dropdown > .inner-nav > .dropdown > .inner-nav > .dropdown > .inner-nav > li > a{
+					/* Fourth level .inner-menu dropdown */
+					padding-left: @sidebar-inner-nav-dropdown-padding-left - 10;
+				}
+			}
+		}
+	}
+}
+
+body.has-sidebar-sm .sidebar{
+	@media(min-width: @screen-md-min){
+		width: @sidebar-sm-width;
+		padding-top: @sidebar-padding + 10;
+		position: relative;
+		z-index: 2;
+
+		.sidebar-nav{
+			> .title{
+				display: none;
+			}
+
+			> li > a{
+				padding: @sidebar-sm-link-padding;
+
+				.fa{
+					margin-left: 0;
+				}
+
+				> span{
+					/* Moving span inside sidebar link to the inner nav */
+					display: none;
+					position: absolute;
+					top: 11px;
+					left: @sidebar-sm-width + 15px;
+					white-space: nowrap;
+					z-index: 2;
+					cursor: auto;
+					text-transform: uppercase;
+				}
+			}
+
+			> .dropdown{
+				&:hover{
+					/* Hover functionality for larger screens( not devices ) */
+					> a > span,
+					> .inner-nav{
+						display: block;
+					}
+				}
+				
+				> a{
+					&:after{
+						display: none;
+					}
+				}
+
+				> .inner-nav{
+					display: none;
+					width: @sidebar-width - 20;
+					padding-top: @sidebar-sm-inner-padding;
+					padding-bottom: @sidebar-sm-inner-padding - 28;
+					position: absolute;
+					top: 0;
+					left: @sidebar-sm-width;
+					z-index: 1;
+					border-left: 1px solid transparent;
+				}
+
+				.inner-nav{
+					> li > a{
+						padding: @sidebar-sm-inner-nav-link-padding;
+						border-top: 1px solid transparent;
+					}
+
+					.dropdown > a:after{
+					 	margin-right: 0;
+					}
+
+					> .dropdown > .inner-nav > li > a{
+						/* Second level .inner-menu dropdown */
+						padding-left: @sidebar-inner-nav-dropdown-padding-left - 30;
+					}
+
+					> .dropdown > .inner-nav > .dropdown > .inner-nav > li > a{
+						/* Third level .inner-menu dropdown */
+						padding-left: @sidebar-inner-nav-dropdown-padding-left - 20;
+					}
+
+					> .dropdown > .inner-nav > .dropdown > .inner-nav > .dropdown > .inner-nav > li > a{
+						/* Fourth level .inner-menu dropdown */
+						padding-left: @sidebar-inner-nav-dropdown-padding-left - 10;
+					}
+				}
+			}
+		}
+	}
+}
+
+body.page-boxed .sidebar{
+	/* Boxed version */
+	@media(min-width: @screen-md-min){
+		border-left: 1px solid transparent;
+	}
+}

@@ -1,0 +1,188 @@
+// Button groups
+// General button groups, vertical button groups, divided buttons groups.
+
+// Rounded and circle button groups
+.btn-group{
+	&.rounded{
+		> .btn,
+		> .btn-group > .btn{
+			.border-left-radius();
+		}
+
+		> .btn,
+		> .btn-group > .btn{
+			.border-right-radius();
+		}
+	}
+
+	&.circle{
+		> .btn,
+		> .btn-group > .btn{
+			.border-left-radius(@circle);
+		}
+
+		> .btn,
+		> .btn-group > .btn{
+			.border-right-radius(@circle);
+		}
+	}
+}
+
+// Divided button group
+.btn-group.divided{
+	display: table;
+	.clearfix();
+
+	> .btn{
+		display: table-cell;
+		width: 50%;
+
+		&:first-child{
+			padding-right: @btn-group-base-divider-width;
+		}
+
+		&:last-child{
+			padding-left: @btn-group-base-divider-width;
+		}
+	}
+
+	> .divider{
+		.btn-group-divider-size(@btn-group-base-divider-width, @btn-group-base-divider-height, @font-size-sm);
+		position: absolute;
+		left: -2px;
+		right: 0;
+		top: 0;
+		bottom: 5px;
+		margin: auto;
+		font-weight: 300;
+		text-align: center;
+		color: @text-color-base;
+		z-index: 3;
+		border: 1px solid @btn-group-base-divider-border;
+		background-color: @btn-group-base-divider-bg;
+
+		.table &{
+			bottom: 0;
+		}
+		
+		.rounded&{
+			&:extend(.rounded);
+		}
+
+		.circle&{
+			&:extend(.circle);
+		}
+	}
+}
+
+// Vertical button group
+.btn-group-vertical{
+	> .btn{
+		// Reseting Bootstrap border radius
+		&:first-child:not(:last-child),
+		&:last-child:not(:first-child){
+			border-radius: 0;
+		}
+		
+		// rounded vertical button group
+		.rounded&{
+			&:first-child{
+				.border-top-radius();
+			}
+
+			&:last-child{
+				.border-bottom-radius();
+			}
+		}
+
+		// circle vertical button group
+		.circle&{
+			&:first-child{
+				.border-top-radius(@circle);
+			}
+
+			&:last-child{
+				.border-bottom-radius(@circle);
+			}
+		}
+	}
+
+	> .btn-group{
+		&:first-child .btn{
+			.rounded&{
+				.border-top-radius();
+			}
+
+			.circle&{
+				.border-top-radius(@circle);
+			}
+		}
+
+		&:last-child .btn{
+			.rounded&{
+				.border-bottom-radius();
+			}
+
+			.circle&{
+				.border-bottom-radius(@circle);
+			}
+		}
+	}
+}
+
+// Button group sizing
+.btn-group-lg{
+	> .btn{
+		&:extend(.btn-lg);
+		border-radius: 0;
+	}
+
+	&.divided > .divider{
+		.btn-group-divider-size(@btn-group-lg-divider-width, @btn-group-lg-divider-height, @font-size-lg - 1);
+	}
+}
+
+// For small button groups Wiseboard inherits Bootstrap sizing styles:
+// padding: 5px 10px;
+// font-size: 12px;
+.btn-group-sm{
+	> .btn{
+		border-radius: 0;
+	}
+
+	&.divided > .divider{
+		.btn-group-divider-size(@btn-group-sm-divider-width, @btn-group-sm-divider-height, @font-size-sm);
+	}
+}
+
+.btn-group-xs{
+	> .btn{
+		&:extend(.btn-xs);
+		border-radius: 0;
+	}
+
+	&.divided > .divider{
+		.btn-group-divider-size(@btn-group-xs-divider-width, @btn-group-xs-divider-height, @font-size-sm - 1);
+	}
+}
+
+// Dropdowns
+.btn-group.open .dropdown-toggle{
+	.box-shadow(0 2px 5px rgba(0, 0, 0, 0.09) inset);
+}
+
+// Split button dropdowns
+.btn-group > .btn + .dropdown-toggle{
+	padding-left: 9px;
+	padding-right: 9px;
+
+	.rounded&,
+	.circle&{
+		.border-left-radius(0);
+	}
+}
+
+.btn-group-lg > .btn + .dropdown-toggle{
+	padding-left: 13px;
+	padding-right: 13px;
+}

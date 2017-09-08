@@ -1,0 +1,150 @@
+/*	============================== 
+				Bootstrap-datepicker
+ 				Bootstrap-datetimepicker
+ 				Bootstrap-daterangepicker
+ 				Clockface
+		==============================	*/
+
+.input-group.date .input-group-addon{
+	&:hover,
+	&:focus{
+		cursor: pointer;
+		background-color: @btn-default-bg - 5;
+	}
+}
+
+.datepicker,
+.datetimepicker,
+.daterangepicker{
+	table > thead > tr > th,
+	table > thead > tr > td,
+	table > tbody > tr > td{
+		padding: 6px 10px;
+	}
+}
+
+.datepicker,
+.datetimepicker{
+	table tr td{
+		&.active:active,
+		&.active:hover:active,
+		&.active.active,
+		&.active:hover.active{
+			background-image: none;
+			background-color: @bg-primary;
+		}
+
+		&.active.disabled:active,
+		&.active.disabled:hover:active,
+		&.active.disabled.active,
+		&.active.disabled:hover.active{
+			color: #999;
+			background-color: @input-disabled-bg;
+		}
+
+		span{
+			&.active,
+			&.active:hover,
+			&.active.disabled,
+			&.active.disabled:hover,
+			&.datetimepicker table tr td span.active:active,
+			&.active:hover:active,
+			&.active.disabled:active,
+			&.active.disabled:hover:active,
+			&.active.active,
+			&.active:hover.active,
+			&.active.disabled.active,
+			&.active.disabled:hover.active{
+				background-image: none;
+				background-color: @bg-primary;
+			}
+		}
+	}
+}
+
+.daterangepicker{
+	&.dropdown-menu{
+		min-width: 0;
+		padding: 5px;
+		z-index: 1029;
+	}
+
+	th.available,
+	td.available{
+		&:hover{
+			background-color: lighten(@bg-default, 1%);
+		}
+	}
+
+	td.active{
+		&,
+		&:hover{
+			background-color: @bg-primary;
+		}
+	}
+
+	.input-mini.active{
+		border-color: darken(@input-border, 25%);
+	}
+}
+
+.datepicker-inline,
+.datetimepicker-inline{
+	border: 1px solid @dropdown-menu-border;
+}
+
+.daterangepicker .ranges li{
+	color: @text-color-base;
+	border: none;
+	background-color: lighten(@bg-default, 1%);
+
+	&:hover{
+		background-color: darken(@bg-default, 1%);
+	}
+
+	&.active{
+		color: #fff;
+		background-color: @bg-primary;
+	}
+}
+
+.clockface{
+	.outer:hover,
+	.inner:hover{
+		background-color: @bg-default;
+	}
+
+	.outer.active{
+		&,
+		&:hover,
+		&:hover:hover,
+		&:active,
+		&:hover:active,
+		&.active,
+		&:hover.active,
+		&.active[disabled],
+		&.active.disabled,
+		&.active:hover.disabled,
+		&.active:hover[disabled]{
+			background-color: @bg-success;
+			background-image: none;
+		}
+	}
+
+	.inner.active{
+		&,
+		&:hover,
+		&:hover:hover,
+		&:active,
+		&:hover:active,
+		&.active,
+		&:hover.active,
+		&.active[disabled],
+		&.active.disabled,
+		&.active:hover.disabled,
+		&.active:hover[disabled]{
+			background-color: @bg-primary;
+			background-image: none;
+		}
+	}
+}

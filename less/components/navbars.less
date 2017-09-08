@@ -1,0 +1,248 @@
+// Navbar
+// .navbar-default, .navbar-inverse
+
+// General styles for navbar
+.navbar{
+	border-radius: 0;
+	z-index: 1080;
+
+	.btn{
+		margin-bottom: 0;
+	}
+}
+
+.navbar-toggle{
+	border-radius: 0;
+}
+
+.navbar-brand{
+	font-size: @font-size-lg;
+
+	> img{
+		display: inline-block;
+	}
+}
+
+.navbar-nav{
+	> li > a{
+		padding: 15px;
+	}
+
+	.open .dropdown-menu{
+		margin-top: 6px;
+		border-radius: @rounded;
+
+		.dropdown-header:first-child{
+		.border-top-radius();
+		}
+
+		@media(max-width: @screen-sm-max){
+			border: 1px solid @dropdown-menu-border;
+			background-color: #fff;
+
+			.dropdown-header{
+				padding: 7px 15px;
+
+				a:not(.btn){
+					padding: 0 0 1px;
+				}
+			}
+		}
+	}
+}
+
+// Default navbar
+.navbar-default{
+	border-color: @navbar-default-border;
+	background-color: @navbar-default-bg;
+
+	.navbar-brand{
+		color: @navbar-default-brand-color;
+
+		&:hover,
+		&:focus{
+			color: darken(@navbar-default-brand-color, 15%);
+		}
+	}
+
+	.navbar-link{
+		color: @navbar-default-link-color;
+
+		&:hover{
+			color: @navbar-default-link-color;
+			text-decoration: underline;
+		}
+	}
+
+	.navbar-text{
+		color: @navbar-default-link-color;
+	}
+
+	.navbar-nav{
+		> li > a{
+			color: @navbar-default-link-color;
+
+			&:hover,
+			&:focus{
+				color: @navbar-default-link-color;
+				background-color: @navbar-default-link-hover-bg;
+			}
+		}
+
+		> .active > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @navbar-default-link-color;
+				background-color: @navbar-default-link-active-bg;
+			}
+		}
+
+		> .disabled > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @navbar-default-link-disabled-color;
+			}
+		}
+
+		// Dropdown menu items
+		> .open > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @navbar-default-link-color;
+				background-color: @navbar-default-link-hover-bg;
+			}
+		}
+
+		@media(max-width: @screen-sm-max){
+			.open .dropdown-menu{
+				> li > a{
+					color: @navbar-default-link-color;
+
+					&:hover,
+					&:focus{
+						color: @navbar-default-link-color;
+						background-color: @navbar-default-link-hover-bg;
+					}
+				}
+
+				> .active > a{
+				  &,
+				  &:hover,
+				  &:focus{
+				  	color: @navbar-default-link-color;
+				    background-color: @navbar-default-link-active-bg;
+				  }
+				}
+
+				> .disabled > a{
+				  &,
+				  &:hover,
+				  &:focus {
+				  	color: @navbar-default-link-disabled-color;
+				  }
+				}
+			}
+		}
+	}
+}
+
+// Inversed navbar
+.navbar-inverse{
+	border-color: @navbar-inverse-border;
+	background-color: @navbar-inverse-bg;
+
+	.navbar-brand{
+		color: @navbar-inverse-brand-color;
+
+		&:hover,
+		&:focus{
+			color: darken(@navbar-inverse-brand-color, 10%);
+		}
+	}
+
+	.navbar-link{
+		color: @navbar-inverse-link-color;
+
+		&:hover{
+			color: @navbar-inverse-link-color;
+			text-decoration: underline;
+		}
+	}
+
+	.navbar-text{
+		color: @navbar-inverse-link-color;
+	}
+
+	.navbar-nav{
+		> li > a{
+			color: @navbar-inverse-link-color;
+
+			&:hover,
+			&:focus{
+				color: @navbar-inverse-link-color;
+				background-color: @navbar-inverse-link-hover-bg;
+			}
+		}
+
+		> .active > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @navbar-inverse-link-color;
+				background-color: @navbar-inverse-link-active-bg;
+			}
+		}
+
+		> .disabled > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @navbar-inverse-link-disabled-color;
+			}
+		}
+
+		// Dropdown menu items
+		> .open > a{
+			&,
+			&:hover,
+			&:focus{
+				color: @navbar-inverse-link-color;
+				background-color: @navbar-inverse-link-hover-bg;
+			}
+		}
+
+		@media(max-width: @screen-sm-max){
+			.open .dropdown-menu{
+				> li > a{
+					color: @navbar-inverse-link-color;
+
+					&:hover,
+					&:focus{
+						color: @navbar-inverse-link-color;
+						background-color: @navbar-inverse-link-hover-bg;
+					}
+				}
+
+				> .active > a{
+				  &,
+				  &:hover,
+				  &:focus{
+				  	color: @navbar-inverse-link-color;
+				    background-color: @navbar-inverse-link-active-bg;
+				  }
+				}
+
+				> .disabled > a{
+				  &,
+				  &:hover,
+				  &:focus {
+				  	color: @navbar-inverse-link-disabled-color;
+				  }
+				}
+			}
+		}
+	}
+}

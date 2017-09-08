@@ -1,0 +1,75 @@
+// Alerts
+// General alerts, alerts with icons
+
+// General styles for all alerts
+.alert{
+	overflow: hidden;
+	color: inherit;
+	border-radius: 0;
+	border-color: transparent;
+
+	.btn{
+		margin-bottom: 0;
+	}
+}
+
+// The misspelled .alert-dismissable was deprecated in 3.2.0
+// Dismissible alerts
+.alert-dismissable,
+.alert-dismissible{
+	position: relative;
+
+	.close{
+		position: absolute;
+		top: 13px;
+		right: 15px;
+	}
+}
+
+// Alerts with icons
+.alert.has-icon{
+	display: table;
+	width: 100%;
+	padding: 0;
+
+		> .alert-icon,
+		> .alert-body{
+			display: table-cell;
+			padding: 15px;
+			vertical-align: middle;
+		}
+
+		> .alert-icon{
+			width: @alert-icon-width;
+			text-align: center;
+			background-color: @alert-icon-bg;
+		}
+}
+
+.alert-dismissable.has-icon,
+.alert-dismissible.has-icon{
+	.alert-body:first-child{
+		padding-right: @alert-icon-width;
+
+		.close{
+			right: @alert-icon-width + 20;
+		}
+	}
+}
+
+// Variants
+.alert-success{
+	background-color: @alert-success-bg;
+}
+
+.alert-info{
+	background-color: @alert-info-bg;
+}
+
+.alert-warning{
+	background-color: @alert-warning-bg;
+}
+
+.alert-danger{
+	background-color: @alert-danger-bg;
+}

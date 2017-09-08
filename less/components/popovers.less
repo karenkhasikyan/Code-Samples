@@ -1,0 +1,30 @@
+// Popovers
+
+.popover{
+	font-size: @font-size-base;
+	border-color: darken(@bg-default, 5%);
+	border-radius: @rounded;
+	.box-shadow(none);
+
+	&.top > .arrow{
+		border-top-color: darken(@bg-default, 5%);
+	}
+
+	&.right > .arrow{
+		border-right-color: darken(@bg-default, 5%);
+	}
+
+	&.bottom > .arrow{
+		border-bottom-color: darken(@bg-default, 5%);
+	}
+
+	&.left > .arrow{
+		border-left-color: darken(@bg-default, 5%);
+	}
+}
+
+.popover-title{
+	font-size: @font-size-base;
+	background-color: @bg-default;
+	.border-top-radius();
+}

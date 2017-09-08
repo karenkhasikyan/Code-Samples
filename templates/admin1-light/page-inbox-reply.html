@@ -1,0 +1,102 @@
+<form name="">
+  <div class="panel panel-default-light border-default panel-message-reply">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h4></h4>
+      </div><!-- /.panel-title -->
+      <div class="panel-tools">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.panel-tools -->
+    </div><!-- /.panel-heading -->
+
+    <div class="panel-body">
+      <div class="message-reply-heading">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">To: </span>
+            <input type="text" class="form-control" name="to" data-content="recipient">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default-outline" data-action="cc">CC</button>
+              <button type="button" class="btn btn-default-outline" data-action="bcc">BCC</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.form-group -->
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">Subject: </span>
+            <input type="text" class="form-control" name="subject" data-content="subject">
+          </div><!-- /input-group -->
+        </div><!-- /.form-group -->
+      </div><!-- /.message-reply-heading -->
+
+      <div data-content="message-editor">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- FILE UPLOAD -->
+          <div id="actions">
+            <button type="button" class="btn btn-default fileinput-button">
+              <i class="fa fa-plus m-right-5"></i> Add files
+            </button>
+            <button type="button" class="btn btn-default start">
+              <i class="fa fa-upload m-right-5"></i> Start
+            </button>
+            <button type="button" class="btn btn-default cancel">
+              <i class="fa fa-trash m-right-5"></i> Cancel
+            </button>
+          </div>
+        </div><!-- /.col-sm-6 -->
+
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary btn-labeled-left pull-right">
+            <i class="fa fa-send"></i> Send
+          </button>
+        </div><!-- /.col-sm-6 -->
+      </div><!-- /.row -->
+
+      <!-- FILE UPLOAD PREVIEW -->
+      <div class="table table-striped files" id="previews">
+        <div id="template" class="file-row">
+          <!-- This is used as the file preview template -->
+          <div>
+            <span class="preview"><img data-dz-thumbnail></span>
+          </div>
+          <div>
+            <p class="name" data-dz-name></p>
+            <strong class="error text-danger" data-dz-errormessage></strong>
+          </div>
+          <div>
+            <p class="size" data-dz-size></p>
+            <div class="fileupload-process">
+              <div class="progress progress-sm">
+                <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 0%" data-dz-uploadprogress></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-default start">
+              <i class="fa fa-upload m-right-5"></i>
+              <span>Start</span>
+            </button>
+            <button data-dz-remove class="btn btn-default cancel">
+              <i class="fa fa-ban m-right-5"></i>
+              <span>Cancel</span>
+            </button>
+            <button data-dz-remove class="btn btn-default delete">
+              <i class="fa fa-trash m-right-5"></i>
+              <span>Delete</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.panel-body -->
+  </div><!--/.panel-->
+</form>

@@ -1,0 +1,123 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+/* Left part */
+// Heading
+.profile-heading{
+	padding-top: 30px;
+	padding-bottom: 5px;
+	position: relative;
+	text-align: center;
+	color: #444;
+	border: 1px solid #D6D6D6;
+	.gradient(#f6f6f6, #e8e8e8);
+	.box-shadow(0 2px 3px #ddd);
+
+	img{
+		max-width: 100%;
+		border: 4px solid #d2d2d2;
+	}
+
+	.lead{
+		font-weight: 600;
+	}
+
+	strong{
+		position: relative;
+
+		&:after{
+			content: "";
+			display: block;
+			width: 30px;
+			height: 1px;
+			margin-top: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 10px;
+			background-color: #999;
+		}
+	}
+
+	address{
+		line-height: 22px;
+		margin-bottom: 0;
+	}
+
+	.btn-group{
+		top: 20px;
+		border: 1px solid #D6D6D6;
+		border-radius: @circle;
+		.box-shadow(0 2px 5px #ddd);
+		.gradient(#fdfdfd, #eee);
+
+		.btn{
+			padding: 4px 15px;
+			margin-bottom: 0;
+			color: #AFAFAF;
+			background-color: transparent;
+
+			&.active,
+			&:active{
+				.box-shadow(none);
+			}
+
+			& + .btn:not(:last-child){
+				&:before,
+				&:after{
+					content: "";
+					width: 1px;
+					height: 12px;
+					position: absolute;
+					top: 8px;
+					background-color: #AFAFAF;
+				}
+
+				&:before{
+					left: 0;
+				}
+
+				&:after{
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+// Body
+.profile-body{
+	padding: 35px 15px;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	.box-shadow(0 1px 3px #ddd);
+
+	.lead{
+		font-weight: 400;
+		color: #81CAF8;
+	}
+
+	li{
+		margin-left: -15px;
+		margin-right: -15px;
+		padding: 7px 25px;
+		font-size: @font-size-base + 1;
+		border-bottom: 1px solid #eee;
+
+		&.active{
+			background-color: #fcfcfc;
+		}
+
+		a{
+			color: inherit;
+		}
+	}
+}
+
+.tab-pane .table > tbody > tr > td{
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	&:first-child{
+		padding-left: 0;
+	}
+}

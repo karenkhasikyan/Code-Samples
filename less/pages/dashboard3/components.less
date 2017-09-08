@@ -1,0 +1,491 @@
+body.page-dashboard .content{
+	// Dashboard styles
+
+	.panel{
+		margin-bottom: @grid-margin-bottom;
+	}
+
+	.panel-body .row-filter{
+		/* Row filter is top section of .panel-body which includes button dropdown and search */
+		margin-bottom: 15px;
+
+		.col-item-search{
+			text-align: right;
+		}
+	}
+
+	.panel-placeholder{
+		/* Jquery UI placeholder */
+		border: 2px dashed @panel-placeholder-border;
+	}
+
+	.panel-footer{
+		text-align: right;
+		background-color: transparent;
+
+		.fa{
+			margin-left: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	.table-responsive{
+		@media(max-width: @screen-xs-max){
+			border: none;
+		}
+	}
+
+	.dataTables_filter{
+		@media(max-width: @screen-sm-max){
+			/* Datatables*/
+			text-align: right;
+		}
+	}
+
+	.row-card{
+		/* Cards */
+		padding: 8px;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: @grid-margin-bottom;
+		border: 1px solid darken(@bg-default, 1%);
+
+		.col-card-item{
+			padding-left: 0;
+			padding-right: 0;
+
+			.panel{
+				margin-bottom: 0;
+				border-color: darken(@bg-default, 1%);
+
+				.panel-body{
+					color: @card-color;
+					text-align: center;
+
+					h1{
+						margin-top: 5px;
+						font-size: @font-size-h1 + 2;
+					}
+
+					span{
+						font-size: @font-size-lg - 1;
+						letter-spacing: .3px;
+					}
+				}
+			}
+
+			@media(min-width: @screen-sm-min){
+				&:first-child + .col-card-item,
+				&:last-child{
+					.panel{
+						border-left-color: transparent;
+					}
+				}
+			}
+
+			@media(min-width: @screen-lg-min){
+				& + .col-card-item .panel{
+					border-left-color: transparent;
+				}
+			}
+		}
+	}
+
+	.panel-chart{
+		@media(min-width: @screen-md-min){
+			/* panels with charts */
+			margin-right: -15px;
+		}
+
+		.panel-body{
+
+			.chart-heading{
+				/* Chart heading */
+				color: @chart-heading-color;
+			}
+
+			.chart-body{
+				/* Chart content */
+				height: @chart-height;
+				margin-top: 20px;
+				margin-right: -15px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	.panel-chart-card{
+		@media(min-width: @screen-lg-min){
+			/* Cards */
+			margin-bottom: 2px;
+		}
+
+		.panel-body{
+			color: @card-color;
+
+			.card-left,
+			.card-right{
+				width: 50%;
+				float: left;
+			}
+
+			.card-left h1{
+				margin-top: 0;
+			}
+
+			.card-right{
+				text-align: right;
+
+				.lead{
+					margin-bottom: 5px;
+					font-size: @font-size-lg + 1;
+				}
+			}
+		}
+
+		.panel-footer{
+			margin-left: 15px;
+			margin-right: 15px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: @font-size-sm - 1;
+			text-align: center;
+		}
+	}
+
+	.panel-lead-staff-activity .media-wrapper{
+		/* Lead staff activity */
+		max-height: @lead-staff-activity-height;
+		overflow-y: auto;
+
+		.media{
+			padding-top: 15px;
+			padding-bottom: 15px;
+			margin-top: 0;
+			border-top: 1px solid @lead-staff-activity-media-border;
+		}
+
+		.media-left .media-object{
+			width: @lead-staff-activity-thumb-width;
+			height: @lead-staff-activity-thumb-height;
+		}
+
+		.media-body{
+			p{
+				margin-bottom: 2px;
+
+				.label{
+					margin-top: -2px;
+					margin-left: 7px;
+				}
+			}
+
+			i{
+				color: @lead-staff-activity-media-italic-color;
+			}
+		}
+
+		.media-right{
+			white-space: nowrap;
+			font-style: italic;
+			color: @lead-staff-activity-media-italic-color;
+		}
+	}
+
+	.panel-requests .media-wrapper{
+		/* Requests */
+		max-height: @requests-height;
+		overflow-y: auto;
+
+		.media{
+			padding-top: 15px;
+			padding-bottom: 15px;
+			margin-top: 0;
+			border-top: 1px solid @requests-media-border;
+		}
+
+		.media-left{
+			padding-right: 40px;
+			vertical-align: middle;
+			position: relative;
+
+			.media-object{
+				width: @requests-thumb-width;
+				height: @requests-thumb-height;
+			}
+
+			i{
+				margin-top: -@requests-thumb-width + 16;
+				position: absolute;
+				right: 15px;
+				font-size: @font-size-sm - 2;
+			}
+		}
+
+		.media-body{
+			vertical-align: middle;
+
+			p:last-child{
+				margin-bottom: 0;
+			}
+
+			strong{
+				margin-right: 7px;
+			}
+
+			.btn-group{
+				@media(max-width: @screen-md-max){
+					margin-top: 15px;
+				}
+
+				@media(min-width: @screen-lg-min){
+					float: right;
+				}
+			}
+		}
+	}
+
+	.panel-tasks .panel-body{
+		/* Task component */
+		padding-bottom: 0;
+		
+		.dt-bootstrap{
+			margin-top: -38px;
+
+			.table{
+				> thead > tr > th,
+				> tbody > tr > td{
+					&:first-child{
+						width: 35px;
+						min-width: 35px;
+						padding-left: 0;
+					}
+
+					&:last-child{
+						width: 50px;
+						padding-right: 0;
+					}
+				}
+
+				> tbody > tr > td{
+					&.details-control:before{
+						margin-right: 0;
+						position: relative;
+						top: -1px;
+						left: 32px;
+					}
+
+					.icheckbox_minimal-grey{
+						position: relative;
+						left: -16px;
+					}
+
+					.btn-group .btn{
+						width: 25px;
+						margin-left: 0;
+					}
+
+					.table > tbody > tr > td:first-child{
+						padding-left: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	.panel-tasks-comments .media-wrapper{
+		/* Task comments component */
+		max-height: @tasks-comments-height;
+		overflow-y: auto;
+
+		> .media{
+			padding-top: 14px;
+			padding-bottom: 14px;
+			margin-top: 0;
+			border-top: 1px solid @tasks-comments-media-border;
+
+			.media-object{
+				width: @tasks-comments-thumb-width;
+				height: @tasks-comments-thumb-width;
+			}
+
+			.media-body p{
+				margin-bottom: 5px;
+
+				i{
+					color: @tasks-comments-highlight-color;
+					text-decoration: underline;
+					cursor: default;
+				}
+			}
+
+			.media-right{
+				white-space: nowrap;
+				font-style: italic;
+				color: @tasks-comments-media-right-color;
+			}
+
+			.media{
+				/* img width + 10px padding of .media-left */
+				margin-right: -@tasks-comments-thumb-width - 5;
+			}
+		}
+	}
+
+	.panel-activity-monitor .media-wrapper{
+		/* Activity list component */
+		max-height: @activity-monitor-height;
+		overflow-y: auto;
+
+		.media{
+			padding-top: 8px;
+			padding-bottom: 8px;
+			margin-top: 0;
+			border-top: 1px solid @activity-monitor-media-border;
+		}
+
+		.media-left .label{
+			width: @activity-monitor-thumb-width;
+			height: @activity-monitor-thumb-height;
+			border-radius: @rounded - 2;
+
+			i{
+				vertical-align: middle;
+			}
+		}
+
+		.media-body{
+			vertical-align: middle;
+		}
+
+		.media-right{
+			white-space: nowrap;
+			font-style: italic;
+			color: @activity-monitor-media-right-color;
+		}
+	}
+
+	.panel-chat .panel-body{
+		.media-wrapper{
+			/* Chat component */
+			max-height: @chat-height;
+			overflow-y: auto;
+
+			.media{
+				& + .media{
+					margin-top: 20px;
+				}
+
+				.media-left{
+					padding-top: 25px;
+				}
+
+				.media-body{
+					.time{
+						font-size: @font-size-sm - 1;
+					}
+
+					.message{
+						margin-top: 8px;
+						padding: 8px 10px 10px;
+						border-radius: @rounded;
+
+						strong{
+							font-style: italic;
+
+							& + p{
+								margin-top: 8px;
+							}
+						}
+
+						p{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+
+			.media-incoming-message .message{
+				border: 1px solid @chat-incoming-message-border;
+				background-color: @chat-incoming-message-background;
+			}
+
+			.media-my-message .message{
+				border: 1px solid @chat-my-message-border;
+				background-color: @chat-my-message-background;
+			}
+		}
+
+		form{
+			margin: 10px -15px -15px;
+			border-top: 1px solid @chat-form-border;
+
+			.form-control{
+				font-size: @font-size-base;
+				border-top: none;
+				border-right-color: @chat-form-border;
+				border-bottom: none;
+				border-left: none;
+
+				&:focus{
+					border-right-color: @chat-form-border;
+				}
+			}
+		}
+	}
+
+	.panel-card-stat .panel-body{
+		/* Cards stats */
+		padding-top: 15px;
+
+		strong{
+			font-weight: 700;
+			font-size: @font-size-sm;
+		}
+
+		h2{
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+	}
+
+	// panel with map
+	.panel-map .panel-body{
+		.map-heading{
+			/* Map heading */
+			color: @map-heading-color;
+		}
+
+		.map-body{
+			/* Map content */
+			height: @map-height;
+			margin-top: 20px;
+			margin-bottom: 15px;
+
+			.jqvmap-zoomin,
+			.jqvmap-zoomout{
+				background-color: #676767;
+			}
+		}
+
+		.table{
+			margin-bottom: 5px;
+
+			> thead > tr > th,
+			> tbody > tr > td{
+				&:first-child{
+					min-width: 100px;
+					padding-left: 0;
+				}
+			}
+
+			> tbody > tr > td .flag{
+				width: @country-sales-flag-width;
+				height: @country-sales-flag-height;
+				top: -2px;
+				margin-right: 5px;
+				background-size: cover;
+			}
+		}
+	}
+}

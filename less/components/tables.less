@@ -1,0 +1,167 @@
+// Tables
+
+//General styles for tables
+.table{
+	margin-bottom: 0;
+
+	> thead,
+  > tbody,
+  > tfoot{
+    > tr{
+      > th,
+      > td{
+        padding: 10px 15px;
+        vertical-align: middle;
+        border-top-color: @table-border;
+
+        .progress,
+        .btn{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  > thead > tr > th{
+    font-weight: 600;
+    border-bottom-width: 1px;
+  	border-bottom-color: @table-border;
+  }
+
+  > tbody + tbody{
+    border-top-width: 1px;
+    border-top-color: @table-border;
+  }
+
+  > tfoot > tr > th{
+    font-weight: 600;
+  }
+}
+
+.table-responsive{
+  border-color: @table-border;
+}
+
+// Condensed table
+.table-condensed{
+  > thead,
+  > tbody,
+  > tfoot{
+    > tr{
+      > th,
+      > td{
+        padding: 8px 13px;
+      }
+    }
+  }
+}
+
+.table-bordered{
+  border-color: @table-border;
+
+  > thead,
+  > tbody,
+  > tfoot{
+    > tr{
+      > th,
+      > td{
+        border-color: @table-border;
+      }
+    }
+  }
+}
+
+// Removes top border of tbody if thead does not exist
+.table > tbody:first-child > tr:first-child{
+	> td,
+	> th{
+		border-top: none;
+	}
+}
+
+// Striped table
+.table-striped > tbody > tr:nth-of-type(odd){
+  background-color: @table-active-bg;
+}
+
+// Table with hover state
+.table-hover > tbody > tr:hover{
+  background-color: @table-active-bg;
+}
+
+.table-scroll{
+  width: 100%;
+  min-height: 0.01%; // IE9 bug fix
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  > .table {
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+// Rounded table
+.table{
+  @media(min-width: @screen-sm-min){
+    &.rounded{
+      position: relative;
+      border-color: transparent;
+
+      &:before,
+      &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &:before{
+        z-index: 1;
+        bottom: 0;
+        border: 1px solid @table-border;
+        border-radius: @rounded;
+      }
+
+      &:after{
+        bottom: 1px;
+        border: 1px solid #fff;
+      }
+
+      // correcting z-index position for table content
+      th,
+      td{
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+// Contextual variants
+// Light contextual classes
+.table-row-variant(active, @table-active-bg);
+.table-row-variant(primary, @table-primary-bg);
+.table-row-variant(success, @table-success-bg);
+.table-row-variant(info, @table-info-bg);
+.table-row-variant(warning, @table-warning-bg);
+.table-row-variant(danger, @table-danger-bg);
+.table-row-variant(inverse, @table-inverse-bg);
+
+// Mixin for solid background colors
+.table-row-solid-variant(bg-default, @bg-default);
+.table-row-solid-variant(bg-primary, @bg-primary);
+.table-row-solid-variant(bg-success, @bg-success);
+.table-row-solid-variant(bg-info, @bg-info);
+.table-row-solid-variant(bg-warning, @bg-warning);
+.table-row-solid-variant(bg-danger, @bg-danger);
+.table-row-solid-variant(bg-inverse, @bg-inverse);

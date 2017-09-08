@@ -1,0 +1,75 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+// root wrapper
+.search-wrapper{
+	margin-top: 100px;
+	padding-left: 60px;
+	padding-right: 60px;
+	@media(max-width: @screen-xs-max){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+// header
+.search-header{
+	padding: 40px 25px;
+	border: 1px solid @bg-default;
+	border-radius: @rounded + 2;
+	.gradient(#fefefe, #f9f9f9);
+	.box-shadow(0 4px 0 @bg-default);
+	@media(max-width: @screen-xs-max){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.input-group{
+		width: 100%;
+
+		.form-control,
+		.input-group-btn .btn{
+			height: 40px;
+		}
+
+		.input-group-btn{
+			width: 200px;
+			@media(max-width: @screen-xs-max){
+				width: 100px;
+			}
+
+			.btn{
+				width: 100%;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+// body
+.search-body{
+	margin-top: 15px;
+	
+	.lead{
+		margin-top: 15px;
+		margin-bottom: 30px;
+		font-style: italic;
+	}
+
+	.media{
+		
+		.media-body{
+			@media(max-width: @screen-xs-max){
+				display: block;
+				width: auto;
+				margin-top: 10px;
+			}
+
+			.media-heading{
+				font-size: @font-size-lg;
+				color: @text-color-base;
+				font-weight: 400;
+			}
+		}
+	}
+}

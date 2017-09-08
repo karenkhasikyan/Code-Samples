@@ -1,0 +1,199 @@
+/*	============================== 
+ 					Icheck
+		==============================	*/
+// Icheck inputs except .icheckbox_line* skin
+.input-group-addon{
+	.icheckbox_minimal-,
+	.iradio_minimal-,
+	.icheckbox_square-,
+	.iradio_square-,
+	.icheckbox_flat-,
+	.iradio_flat-{
+		&grey,
+		&blue,
+		&green,
+		&aero,
+		&orange,
+		&red{
+			margin: 0;
+			display: block;
+		}
+	}
+}
+
+/* Line skin */
+@icheck-default-bg: #afafaf;
+
+/* grey */
+.icheckbox_line-grey,
+.iradio_line-grey{
+	background-color: @icheck-default-bg;
+}
+
+.icheckbox_line-grey.hover,
+.icheckbox_line-grey.checked.hover,
+.iradio_line-grey.hover {
+  background-color: darken(@icheck-default-bg, 10%);
+}
+
+.icheckbox_line-grey.checked,
+.iradio_line-grey.checked{
+	background-color: darken(@icheck-default-bg, 15%);
+}
+
+.icheckbox_line-grey.disabled,
+.iradio_line-grey.disabled{
+  background-color: darken(@icheck-default-bg, 10%);
+  opacity: .6;
+}
+
+.icheckbox_line-grey.checked.disabled,
+.iradio_line-grey.checked.disabled{
+	background-color: darken(@icheck-default-bg, 15%);
+	opacity: .6;
+}
+
+/* blue */
+.icheckbox_line-blue,
+.iradio_line-blue{
+	background-color: @btn-primary-bg;
+}
+
+.icheckbox_line-blue.hover,
+.icheckbox_line-blue.checked.hover,
+.iradio_line-blue.hover {
+  background-color: darken(@btn-primary-bg, 5%);
+}
+
+.icheckbox_line-blue.checked,
+.iradio_line-blue.checked{
+	background-color: darken(@btn-primary-bg, 15%);
+}
+
+.icheckbox_line-blue.disabled,
+.iradio_line-blue.disabled{
+  background-color: darken(@btn-primary-bg, 5%);
+  opacity: .6;
+}
+
+.icheckbox_line-blue.checked.disabled,
+.iradio_line-blue.checked.disabled{
+	background-color: darken(@btn-primary-bg, 15%);
+	opacity: .6;
+}
+
+/* green */
+.icheckbox_line-green,
+.iradio_line-green{
+	background-color: @btn-success-bg;
+}
+
+.icheckbox_line-green.hover,
+.icheckbox_line-green.checked.hover,
+.iradio_line-green.hover {
+  background-color: darken(@btn-success-bg, 5%);
+}
+
+.icheckbox_line-green.checked,
+.iradio_line-green.checked{
+	background-color: darken(@btn-success-bg, 15%);
+}
+
+.icheckbox_line-green.disabled,
+.iradio_line-green.disabled{
+  background-color: darken(@btn-success-bg, 5%);
+  opacity: .6;
+}
+
+.icheckbox_line-green.checked.disabled,
+.iradio_line-green.checked.disabled{
+	background-color: darken(@btn-success-bg, 15%);
+	opacity: .6;
+}
+
+/* aero */
+.icheckbox_line-aero,
+.iradio_line-aero{
+	background-color: @btn-info-bg;
+}
+
+.icheckbox_line-aero.hover,
+.icheckbox_line-aero.checked.hover,
+.iradio_line-aero.hover {
+  background-color: darken(@btn-info-bg, 5%);
+}
+
+.icheckbox_line-aero.checked,
+.iradio_line-aero.checked{
+	background-color: darken(@btn-info-bg, 15%);
+}
+
+.icheckbox_line-aero.disabled,
+.iradio_line-aero.disabled{
+  background-color: darken(@btn-info-bg, 5%);
+  opacity: .6;
+}
+
+.icheckbox_line-aero.checked.disabled,
+.iradio_line-aero.checked.disabled{
+	background-color: darken(@btn-info-bg, 15%);
+	opacity: .6;
+}
+
+/* orange */
+.icheckbox_line-orange,
+.iradio_line-orange{
+	background-color: @btn-warning-bg;
+}
+
+.icheckbox_line-orange.hover,
+.icheckbox_line-orange.checked.hover,
+.iradio_line-orange.hover {
+  background-color: darken(@btn-warning-bg, 5%);
+}
+
+.icheckbox_line-orange.checked,
+.iradio_line-orange.checked{
+	background-color: darken(@btn-warning-bg, 15%);
+}
+
+.icheckbox_line-orange.disabled,
+.iradio_line-orange.disabled{
+  background-color: darken(@btn-warning-bg, 5%);
+  opacity: .6;
+}
+
+.icheckbox_line-orange.checked.disabled,
+.iradio_line-orange.checked.disabled{
+	background-color: darken(@btn-warning-bg, 15%);
+	opacity: .6;
+}
+
+/* red */
+.icheckbox_line-red,
+.iradio_line-red{
+	background-color: @btn-danger-bg;
+}
+
+.icheckbox_line-red.hover,
+.icheckbox_line-red.checked.hover,
+.iradio_line-red.hover {
+  background-color: darken(@btn-danger-bg, 5%);
+}
+
+.icheckbox_line-red.checked,
+.iradio_line-red.checked{
+	background-color: darken(@btn-danger-bg, 15%);
+}
+
+.icheckbox_line-red.disabled,
+.iradio_line-red.disabled{
+  background-color: darken(@btn-danger-bg, 5%);
+  opacity: .6;
+}
+
+.icheckbox_line-red.checked.disabled,
+.iradio_line-red.checked.disabled{
+	background-color: darken(@btn-danger-bg, 15%);
+	opacity: .6;
+}

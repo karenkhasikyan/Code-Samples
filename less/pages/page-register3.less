@@ -1,0 +1,72 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+body{
+	background: url(../img/login-bg.jpg) no-repeat 50% 70%;
+	background-size: cover;
+}
+
+.register-wrapper{
+	position: relative;
+	max-width: 360px;
+
+	@media(max-width: @screen-xs-max){
+		margin: 80px auto;
+	}
+
+	@media(min-width: @screen-sm-min){
+		width: 100%;
+		float: right;
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+
+	.panel{
+		margin-top: 25px;
+		color: @brand-default;
+		border-radius: @rounded + 2;
+		background-color: rgba(0,0,0,.55);
+	}
+
+	.panel-body{
+		padding: 25px 30px 40px;
+
+		h3{
+			margin-top: 0;
+			margin-bottom: 20px;
+			font-weight: 400;
+			text-align: center;
+		}
+
+		form{
+			.form-title{
+				position: relative;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			.form-control{
+				.box-shadow(inset 0px 1px 2px 0px #EFEFEF);
+			}
+
+			.btn{
+				margin-top: 40px;
+				font-weight: 600;
+			}
+		}		
+	}
+
+	.panel-footer{
+		padding: 15px 30px;
+		font-weight: 600;
+		text-align: center;
+		border-top: none;
+		.border-bottom-radius();
+		background-color: rgba(0,0,0,.2);
+	  
+	  a{
+	  	color: @brand-default;
+	  }
+	}
+}

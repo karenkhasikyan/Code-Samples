@@ -1,0 +1,49 @@
+.sidebar .sidebar-search{
+	/* Search in sidebar */
+	a{
+		display: none;
+	}
+
+	form{
+		padding: @sidebar-search-form-padding;
+
+		.form-control{
+			z-index: 3;
+			.transition();
+		}
+	}
+}
+
+body.has-sidebar-sm .sidebar .sidebar-search{
+	@media(min-width: @screen-md-min){
+		/* Search in small sidebar */
+		position: relative;
+
+		a{
+			display: block;
+			padding: @sidebar-sm-link-padding;
+			font-size: @font-size-lg - 2;
+			text-align: center;
+			border-bottom: 1px solid transparent;
+
+			.fa{
+				width: 21px;
+			}
+		}
+
+		&:hover form{
+			display: block;
+		}
+
+		form{
+			display: none;
+			width: @sidebar-width - 20;
+			padding: @sidebar-sm-search-form-padding;
+			position: absolute;
+			top: 0;
+			left: @sidebar-sm-width;
+			z-index: 1;
+			border-left: 1px solid transparent;
+		}
+	}
+}

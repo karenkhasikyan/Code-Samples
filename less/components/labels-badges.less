@@ -1,0 +1,224 @@
+// Labels & Badges
+// General labels, outline labels, general badges, outline badges, hexagon badges, hexagon outline badges
+
+.label{
+	display: inline-block;
+	padding: 5px 7px;
+	font-size: 85%;
+	font-weight: 400;
+	color: inherit;
+	border: 1px solid transparent;
+	border-radius: 0;
+
+	&.dropdown-toggle{
+		&:hover,
+		&:focus{
+			cursor: pointer;
+		}
+	}
+
+	.dropdown-menu > li > a > &{
+		padding: 4px 5px 4px 4px;
+		margin-left: 2px;
+		font-size: 9px;
+	}
+}
+
+// General labels
+.label-default{
+	.label-variant-general(@text-color-base, @label-default-bg);
+}
+
+.label-primary{
+	.label-variant-general(#fff, @label-primary-bg);
+}
+
+.label-success{
+	.label-variant-general(#fff, @label-success-bg);
+}
+
+.label-info{
+	.label-variant-general(#fff, @label-info-bg);
+}
+
+.label-warning{
+	.label-variant-general(#fff, @label-warning-bg);
+}
+
+.label-danger{
+	.label-variant-general(#fff, @label-danger-bg);
+}
+
+.label-inverse{
+	.label-variant-general(#fff, @label-inverse-bg);
+}
+
+// Outline labels
+// .label-default-outline color scheme is slightly different than the other outline labels'. That's why there is no need to call a mixin.
+.label-default-outline{
+	color: lighten(@text-color-base, 20%);
+	border-color: darken(@label-default-bg, 5%);
+}
+
+.label-primary-outline{
+	.label-variant-outline(@label-primary-bg);
+}
+
+.label-success-outline{
+	.label-variant-outline(@label-success-bg);
+}
+
+.label-info-outline{
+	.label-variant-outline(@label-info-bg);
+}
+
+.label-warning-outline{
+	.label-variant-outline(@label-warning-bg);
+}
+
+.label-danger-outline{
+	.label-variant-outline(@label-danger-bg);
+}
+
+.label-inverse-outline{
+	.label-variant-outline(@label-inverse-bg);
+}
+
+//Hexagon labels
+// Duplicated from .btn-hexagon
+// Isn't extended from .btn-hexagon because labels don't have sizing so there is no necessary to extend it from buttons too
+.label-hexagon{
+	.button-hexagon-size(@btn-xs-hexagon-width, 100%);
+	display: inline-block;
+	position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  border-top: none;
+  border-bottom: none;
+  background-color: none;
+  border-radius: 0 !important;
+
+  &.dropdown-toggle{
+		&:hover,
+		&:focus{
+			.box-shadow(none);
+		}
+
+		.btn-group.open &{
+			.box-shadow(none);
+		}
+	}
+
+  &:before,
+  &:after{
+  	content: "";
+    position: absolute;
+    background-color: inherit;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+  }
+
+  &:before{
+  	border-top: 1.4142px solid transparent;
+    border-right: 1.4142px solid transparent;
+  }
+
+  &:after{
+  	border-bottom: 1.4142px solid transparent;
+    border-left: 1.4142px solid transparent;
+  }
+
+  > span{
+  	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+// General hexagon labels
+.label-hexagon-default{
+	.label-hexagon-variant-general(inherit, @label-default-bg);
+}
+
+.label-hexagon-primary{
+	.label-hexagon-variant-general(#fff, @label-primary-bg);
+}
+
+.label-hexagon-success{
+	.label-hexagon-variant-general(#fff, @label-success-bg);
+}
+
+.label-hexagon-info{
+	.label-hexagon-variant-general(#fff, @label-info-bg);
+}
+
+.label-hexagon-warning{
+	.label-hexagon-variant-general(#fff, @label-warning-bg);
+}
+
+.label-hexagon-danger{
+	.label-hexagon-variant-general(#fff, @label-danger-bg);
+}
+
+.label-hexagon-inverse{
+	.label-hexagon-variant-general(#fff, @label-inverse-bg);
+}
+
+// Outline label hexagons
+// .label-hexagon-default-outline color scheme is slightly different than the other outline hexagon labels'. That's why there is no need to call a mixin.
+.label-hexagon-default-outline{
+	&:extend(.label-default-outline);
+
+	&:before{
+    border-top: 1.4142px solid darken(@label-default-bg, 5%);
+    border-right: 1.4142px solid darken(@label-default-bg, 5%);
+  }
+
+  &:after{
+    border-bottom: 1.4142px solid darken(@label-default-bg, 5%);
+    border-left: 1.4142px solid darken(@label-default-bg, 5%);
+  }
+}
+
+.label-hexagon-primary-outline{
+	.label-hexagon-variant-outline(@label-primary-bg);
+}
+
+.label-hexagon-success-outline{
+	.label-hexagon-variant-outline(@label-success-bg);
+}
+
+.label-hexagon-info-outline{
+	.label-hexagon-variant-outline(@label-info-bg);
+}
+
+.label-hexagon-warning-outline{
+	.label-hexagon-variant-outline(@label-warning-bg);
+}
+
+.label-hexagon-danger-outline{
+	.label-hexagon-variant-outline(@label-danger-bg);
+}
+
+.label-hexagon-inverse-outline{
+	.label-hexagon-variant-outline(@label-inverse-bg);
+}
+
+// Badges
+.badge{
+	&:extend(.label);
+	&:extend(.circle);
+	color: lighten(@text-color-base, 15%);
+	border-color: darken(@label-default-bg, 5%);
+	background-color: @label-default-bg;
+
+	.dropdown-menu > li > a > &{
+		margin-left: 5px;
+	}
+}

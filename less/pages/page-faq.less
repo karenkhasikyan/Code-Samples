@@ -1,0 +1,102 @@
+@import "../components/variables";
+@import "../components/mixins";
+
+// root wrapper
+.faq-wrapper{
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding-left: 60px;
+	padding-right: 60px;
+	@media(max-width: @screen-xs-max){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+// header
+.faq-header{
+	padding: 50px;
+	border: 1px solid @bg-default;
+	border-radius: @rounded + 2;
+	.gradient(#fefefe, #f9f9f9);
+	.box-shadow(0 4px 0 @bg-default);
+	@media(max-width: @screen-xs-max){
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.input-group{
+		width: 100%;
+
+		.form-control,
+		.input-group-btn .btn{
+			height: 40px;
+		}
+
+		.input-group-btn{
+			width: 250px;
+			@media(max-width: @screen-xs-max){
+				width: 100px;
+			}
+
+			.btn{
+				width: 100%;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+// body
+.faq-body{
+	h2{
+		@media(max-width: @screen-xs-max){
+			font-size: @font-size-h3;
+		}
+	}
+
+	.panel-group{
+		padding: 8px 10px;
+		border: 1px solid @bg-default;
+		border-radius: @rounded + 2;
+
+		.panel-heading{
+			font-size: @font-size-base + 2;
+			font-weight: 600;
+			@media(max-width: @screen-xs-max){
+				font-size: @font-size-base + 1;
+			}
+
+			// bottom border
+			&:after{
+				background-color: darken(@bg-default, 5%);
+			}
+
+			a{
+				// Plus icon
+				&:after{
+					content: "\f067";
+					position: absolute;
+					right: 15px;
+					font-family: 'FontAwesome';
+					font-weight: 400;
+					text-rendering: auto;
+				  -webkit-font-smoothing: antialiased;
+				  -moz-osx-font-smoothing: grayscale;
+					.transition();
+				}
+
+				// rotates 45deg plus icon
+				&[aria-expanded="true"]:after{
+					-ms-transform: rotate(45deg);
+			    -webkit-transform: rotate(45deg);
+			    transform: rotate(45deg);
+				}
+			}
+		}
+
+		.panel:last-child .panel-heading:after{
+			display: none;
+		}
+	}
+}

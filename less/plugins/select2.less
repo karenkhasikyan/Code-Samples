@@ -1,0 +1,193 @@
+/*	============================== 
+ 					select2
+		==============================	*/
+
+// General styles for select2 without select2-bootstrap-theme
+// Active state for dropdown item
+.select2-container--default{
+	.select2-selection{
+		border-color: @input-border;
+
+		.select2-container--focus&,
+		.select2-container--open&{
+			border-color: darken(@input-border, 25%);
+		}
+	}
+
+	.select2-dropdown{
+		border-color: darken(@input-border, 25%);
+	}
+
+	.select2-results__option[aria-selected=true]{
+		color: @text-color-base;
+	  background-color: darken(@bg-default, 2%);
+	}
+
+	// Hover state for dropdown item
+	.select2-results__option--highlighted[aria-selected]{
+		color: #fff;
+	  background-color: #337ab7;
+	}
+
+	.select2-selection--single .select2-selection__rendered,
+	.select2-selection--single .select2-selection__placeholder{
+	 	color: @input-color;
+	}
+
+	&.select2-container--disabled{
+	  .select2-selection{
+	  	border-color: @input-border;
+	  	background-color: @input-disabled-bg;
+	  }
+	}
+}
+
+// Styles for select2 with select2-bootstrap-theme
+// Mixin for select2 validation states
+.select2-validation-states(@state, @color, @border, @background){
+	.has-@{state}{
+		.select2-dropdown,
+		.select2-selection{
+		  border-color: @border;
+		}
+
+		.select2-container--focus .select2-selection,
+		.select2-container--open .select2-selection{
+		  border-color: @border;
+		  background-color: lighten(@background, 5%);
+		}
+
+		.select2-container--bootstrap .select2-selection--single{
+			.select2-selection__rendered,
+			.select2-selection__placeholder{
+				color: @color;
+			}
+
+			// Arrow
+			.select2-selection__arrow b{
+				border-top-color: @color;
+			}
+		}
+
+		.select2-container--bootstrap .select2-selection--multiple .select2-search__field{
+			color: @color;
+			.placeholder(@color);
+		}
+	}
+
+	// Disabled state
+	.has-@{state}{
+		.input-group .select2-container--disabled,
+		.select2-container--disabled{
+			.select2-selection,
+			.select2-container--open .select2-selection,
+			.select2-container--focus .select2-selection{
+				border-color: @border;
+	  		background-color: @input-disabled-bg + 5;
+			}
+
+			.select2-selection--single{
+				.select2-selection__rendered,
+				.select2-selection__placeholder{
+					color: #999;
+				}
+
+				// Arrow
+				.select2-selection__arrow b{
+					border-top-color: #999;
+				}
+			}
+		}
+	}
+}
+
+.select2-container--bootstrap{
+	.select2-selection{
+		color: @input-color;
+		border-color: @input-border;
+
+		.select2-container--focus&,
+		.select2-container--open&{
+			border-color: darken(@input-border, 25%);
+		}
+	}
+
+	.select2-search__field{
+		.placeholder(@input-color);
+	}
+
+	.select2-dropdown{
+		border: 1px solid darken(@input-border, 25%);
+	}
+
+	.select2-selection--single{
+	 	.select2-selection__rendered,
+	 	.select2-selection__placeholder{
+	 		color: @input-color;
+	 	}
+	}
+
+	&.select2-container--disabled{
+	  .select2-selection{
+	  	border-color: @input-border;
+	  	background-color: @input-disabled-bg;
+	  }
+	}
+
+	.select2-results__group + .select2-results__options li{
+		/* For optgroup */
+		padding-left: 25px;
+	}
+}
+
+// Active state for dropdown item
+.select2-container--bootstrap .select2-results__option[aria-selected=true]{
+	color: @text-color-base;
+  background-color: darken(@bg-default, 2%);
+}
+
+// Select2 with rounded corners
+select.rounded + .select2-container--bootstrap .select2-selection{
+	border-radius: @rounded;
+}
+
+select.circle + .select2-container--bootstrap .select2-selection{
+	border-radius: @circle;
+}
+
+.input-group .select2-container--bootstrap .select2-selection{
+	// With rounded corners
+	.select2-bootstrap-prepend.rounded&{
+		.border-right-radius();
+	}
+
+	.select2-bootstrap-append.rounded&{
+		.border-left-radius();
+	}
+
+	// With circle corners
+	.select2-bootstrap-prepend.circle&{
+		.border-right-radius(@circle);
+	}
+
+	.select2-bootstrap-append.circle&{
+		.border-left-radius(@circle);
+	}
+}
+
+.select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection{
+	.input-group.circle &{
+		border-top-color: inherit;
+	}
+}
+
+.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection{
+	.input-group.circle &{
+		border-bottom-color: inherit;
+	}
+}
+
+// Select2 validation states
+.select2-validation-states(success, @state-success-color, @state-success-border, @state-success-bg);
+.select2-validation-states(warning, @state-warning-color, @state-warning-border, @state-warning-bg);
+.select2-validation-states(error, @state-danger-color, @state-danger-border, @state-danger-bg);

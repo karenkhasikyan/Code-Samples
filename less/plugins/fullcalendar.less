@@ -1,0 +1,49 @@
+/*	============================== 
+ 					Fullcalendar
+		==============================	*/
+
+.fc-toolbar h2{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+	font-size: @font-size-lg;
+}
+
+.fc-state-default{
+	color: @btn-default-color;
+	border-bottom-width: 2px;
+	border-color: transparent;
+	background-color: transparent;
+	background-image: none;
+	text-shadow: none;
+
+	&.fc-state-hover{
+		border-bottom-color: @bg-info;
+	}
+}
+
+.fc-state-active{
+	border-bottom-color: @bg-info;
+}
+
+.fc-event{
+	border-color: darken(@bg-info, 5%);
+	background-color: @bg-info;
+
+	.fc-popover &{
+		&,
+		&:hover{
+			color: @text-color-base;
+			border-color: darken(@bg-default, 5%);
+			background-color: @bg-default;
+		}
+	}
+}
+
+.fc-more{
+	color: @text-color-base;
+}
+
+.fc th{
+	font-weight: 300;
+}

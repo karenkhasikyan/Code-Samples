@@ -1,0 +1,79 @@
+/*	============================== 
+ 					Datatables
+		==============================	*/
+
+.dt-bootstrap{
+	thead > tr,
+	tbody > tr,
+	tfoot > tr{
+		.checkbox,
+	  .radio{
+	  	display: block;
+	    margin-top: 0;
+	    margin-bottom: 0;
+	    text-align: center;
+	  }
+	}
+
+  thead > tr{
+    > th,
+    > td{
+      border-bottom: none;
+    }
+  }
+
+  thead > tr,
+  tfoot > tr{
+	  th > .form-control,
+	  th > .select2-container--bootstrap{
+	  	font-weight: 400;
+	  }
+  }
+
+  tbody > tr{
+  	&.group,
+		&.group:hover {
+		  background-color: @table-active-bg;
+		}
+
+		&.selected > td{
+			color: @text-color-base;
+			background-color: @bg-default;
+		}
+
+		td.details-control{
+			cursor: pointer;
+			
+	    &:before{
+	    	content: "";
+	    	width: 16px;
+	    	height: 16px;
+	    	display: inline-block;
+	    	margin-right: 15px;
+				vertical-align: middle;
+				background: url("../plugins/datatables/img/sprite.png") no-repeat;
+	    }
+		}
+
+		&.shown td.details-control:before{
+			background-position: -21px 0;
+		}
+  }
+
+  .form-control{
+  	width: 100%;
+  }
+}
+
+// Sorting icon
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after{
+	font-size: @font-size-lg;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: @text-muted;
+}

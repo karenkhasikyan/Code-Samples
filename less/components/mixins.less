@@ -1,0 +1,624 @@
+.clearfix(){
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Box shadow
+.box-shadow(@box-shadow){
+  box-shadow: @box-shadow;
+  -webkit-box-shadow: @box-shadow;
+}
+
+// Top corners border radius
+.border-top-radius(@radius: @rounded){
+  border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+}
+
+// Right sides corners border radius
+.border-right-radius(@radius: @rounded){
+  border-top-right-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+
+// Bottom corners border radius
+.border-bottom-radius(@radius: @rounded){
+  border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+
+// Left sides corners border radius
+.border-left-radius(@radius: @rounded){
+  border-top-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+
+// Flat shadow
+.flat-shadow(@color: rgba(0, 0, 0, .04)){
+  text-shadow: @color -1px 1px, @color -2px 2px, @color -3px 3px, @color -4px 4px, @color -5px 5px, @color -6px 6px, @color -7px 7px, @color -8px 8px;
+}
+
+//  background color variants
+// .bg-default
+// .bg-primary
+// .bg-success
+// .bg-info
+// .bg-warning
+// .bg-danger
+// .bg-inverse
+.background-variant(@color, @background){
+  color: @color !important;
+  background-color: @background !important;
+}
+
+// General buttons
+.button-variant-general(@color, @border, @background){
+  color: @color;
+  border-color: @border;
+  background-color: @background;
+
+  &:hover,
+  &:focus,
+  &.focus{
+    color: @color;
+    border-color: @border - 20;
+    background-color: @background - 20;
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      color: @color;
+      border-color: @border - 20;
+      background-color: @background - 20;
+    }
+  }
+  
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      border-color: @border - 30;
+      background-color: @background - 30;
+    }
+  }
+
+  .badge{
+    border-color: transparent;
+  }
+}
+
+// Outline buttons
+.button-variant-outline(@color){
+  color: @color;
+  border-color: @color;
+  background-color: #fff;
+
+  &:hover,
+  &:focus,
+  &.focus{
+    color: #fff;
+    border-color: @color - 17;
+    background-color: @color;
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      color: #fff;
+      border-color: @color - 17;
+      background-color: @color;
+    }
+  }
+  
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      color: @color;
+      background-color: #fff;
+    }
+  }
+}
+
+// General hexagon buttons
+.button-hexagon-variant-general(@color, @border, @background){
+  color: @color;
+  border-left-color: @border;
+  border-right-color: @border;
+  background-color: @background;
+
+  &:before{
+    border-top: 1.4142px solid @border;
+    border-right: 1.4142px solid @border;
+  }
+
+  &:after{
+    border-bottom: 1.4142px solid @border;
+    border-left: 1.4142px solid @border;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus{
+    color: @color;
+    border-color: @border - 20;
+    background-color: @background - 20;
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      color: @color;
+      border-color: @border - 20;
+      background-color: @background - 20;
+    }
+  }
+  
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      border-color: @border - 30;
+      background-color: @background - 30;
+    }
+  }
+}
+
+// Outline hexagon buttons
+.button-hexagon-variant-outline(@color){
+  color: @color;
+  border-left-color: @color;
+  border-right-color: @color;
+  background-color: transparent;
+
+  &:before{
+    border-top: 1.4142px solid @color;
+    border-right: 1.4142px solid @color;
+  }
+
+  &:after{
+    border-bottom: 1.4142px solid @color;
+    border-left: 1.4142px solid @color;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus{
+    color: #fff;
+    border-color: @color - 17;
+    background-color: @color;
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      color: #fff;
+      border-color: @color - 17;
+      background-color: @color;
+    }
+  }
+  
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &{
+    &,
+    &:hover,
+    &:focus,
+    &.focus{
+      color: @color;
+      background-color: transparent;
+    }
+  }
+}
+
+// Hexagon button sizes
+.button-hexagon-size(@hexagon-width, @hexagon-font-size){
+  @width: @hexagon-width; // hexagon width
+  @height: @width / sqrt(3); // hexagon height
+
+  @widthAfter: @width / sqrt(2); // hexagon width, height in :before and :after
+  @top: @widthAfter / 2; //top position in :before and and bottom for :after
+  
+  width: unit(@width, px);
+  height: unit(ceil(@height), px);
+  
+  &:before,
+  &:after{
+    width: round(unit(@widthAfter, px));
+    height: round(unit(@widthAfter, px));
+    left: round(unit(@width / sqrt(81), px));
+  }
+
+  &:before{
+    top: round(unit(-@top - 0.1, px));
+  }
+
+  &:after{
+    bottom: round(unit(-@top - 0.1, px));
+  }
+
+  > span{
+    line-height: unit(@height, px);
+    font-size: @hexagon-font-size;
+  }
+}
+
+// Divider size between two buttons in .btn-group
+.btn-group-divider-size(@width, @height, @font-size){
+  width: @width;
+  height: @height;
+  line-height: @height - 3;
+  font-size: @font-size;
+}
+
+// General labels
+.label-variant-general(@color, @background){
+  color: @color;
+  background-color: @background;
+}
+
+// Outline labels
+.label-variant-outline(@color){
+  color: @color;
+  border-color: @color;
+}
+
+// General hexagon labels
+.label-hexagon-variant-general(@color, @background){
+  color: @color;
+  background-color: @background;
+}
+
+// Outline hexagon labels
+.label-hexagon-variant-outline(@color){
+  color: @color;
+  border-left-color: @color;
+  border-right-color: @color;
+
+  &:before{
+    border-top: 1.4142px solid @color;
+    border-right: 1.4142px solid @color;
+  }
+
+  &:after{
+    border-bottom: 1.4142px solid @color;
+    border-left: 1.4142px solid @color;
+  }
+}
+
+// General panels
+.panel-variant-general(@border, @heading-color, @heading-bg, @footer-color, @footer-bg){
+  border: 1px solid @border;
+
+  > .panel-heading{
+    color: @heading-color;
+    background-color: @heading-bg;
+  }
+
+  > .panel-footer{
+    color: @footer-color;
+    background-color: @footer-bg;
+  }
+}
+
+// Light panels
+.panel-variant-light(@heading-color, @heading-bg, @footer-color, @footer-bg){
+  > .panel-heading{
+    color: @heading-color;
+    background-color: @heading-bg;
+  }
+
+  > .panel-footer{
+    color: @footer-color;
+    background-color: @footer-bg;
+  }
+}
+
+// Contextual classes in tables
+.table-row-variant(@state, @background){
+  .table > thead,
+  .table > tbody,
+  .table > tfoot{
+    > tr{
+      > td.@{state},
+      > th.@{state},
+      &.@{state} > td,
+      &.@{state} > th {
+        border-top-color: transparent;
+        background-color: @background;
+      }
+    }
+  }
+
+  // Hover states for .table-hover
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 3%);
+    }
+  }
+}
+
+// For solid background colors
+.table-row-solid-variant(@state, @background){
+  .table > thead,
+  .table > tbody,
+  .table > tfoot{
+    > tr{
+      > td.@{state},
+      > th.@{state},
+      &.@{state} > td,
+      &.@{state} > th {
+        border-top-color: transparent;
+      }
+    }
+  }
+
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 3%) !important;
+    }
+  }
+}
+
+// Underline tabs
+.tabs-variant-underline(@border){
+  > li{
+    > a{
+      &:hover,
+      &:focus{
+        border-bottom-color: darken(@border, 2%);
+      }
+    }
+
+    &.active > a{
+      &,
+      &:hover,
+      &:focus{
+        border-bottom-color: darken(@border, 5%);
+      }
+    }
+  }
+}
+
+// Overline tabs
+.tabs-variant-overline(@border){
+  > li{
+    > a{
+      &:hover,
+      &:focus{
+        border-top-color: darken(@border, 2%);
+      }
+    }
+
+    &.active > a{
+      &,
+      &:hover,
+      &:focus{
+        border-top-color: darken(@border, 5%);
+      }
+    }
+  }
+}
+
+//Form input placeholder
+.placeholder(@color){
+  // Firefox
+  &::-moz-placeholder{
+    color: @color;
+  }
+
+  // Internet Explorer 10+
+  &:-ms-input-placeholder{
+    color: @color;
+  }      
+  
+  // Safari and Chrome
+  &::-webkit-input-placeholder{
+    color: @color;
+  } 
+}
+
+.form-validation(@color, @border, @background){
+  // Color the label and help text
+  .help-block,
+  label,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label{
+    color: @color;
+  }
+
+  .form-control{
+    color: @color;
+    .placeholder(@color);
+    border-color: @border;
+    .box-shadow(none);
+
+    &:focus {
+      border-color: @border;
+      background-color: lighten(@background, 5%);
+      .box-shadow(none);
+    }
+  }
+  
+  .input-group-addon{
+    color: @color;
+    border-color: @border;
+    background-color: @background;
+  }
+  
+  // input icon color
+  .form-control-feedback,
+  .input-icon{
+    color: lighten(@color, 20%);
+  }
+}
+
+.list-group-item-variant(@state, @border, @background, @active-bg){
+  .list-group-item-@{state}{
+    color: inherit;
+    border-color: @border;
+    background-color: @background;
+
+    a&,
+    button&{
+      &:hover,
+      &:focus{
+        background-color: darken(@background, 5%);
+      }
+
+      &.active{
+        &,
+        &:hover,
+        &:focus{
+          border-color: darken(@active-bg, 5%);
+          background-color: @active-bg;
+        }
+      }
+    }
+  }
+}
+
+// Step Variants
+// Rect steps
+.step-rect-variant(@background){
+  > .step-item-rect{
+    &.active > a{
+      color: #fff;
+      background-color: @background;
+    }
+  }
+}
+
+// Line steps
+.step-line-variant(@background){
+  > .step-item-line{
+    i{
+      color: @background;
+    }
+
+    &.active > a{
+      border-color: @background;
+      background: lighten(@background, 28%);
+    }
+
+    &:before{
+      background-color: @background;
+    }
+
+    a{
+      border-color: lighten(@background, 28%);
+      background: @background;
+    }
+  }
+}
+
+// Circle steps
+.step-circle-variant(@background){
+  &:before,
+  &:after{
+    background-color: @background;
+  }
+  
+  .step{
+    color: #fff;
+    border-color: @background - 20;
+    background-color: @background;
+
+    &.step-outline{
+      color: @background;
+      border-color: @background;
+      background-color: #fff;
+    }
+  }
+
+  .step-heading{
+    color: @background;
+  }
+}
+
+// Pricing
+.pricing-variant(@background-color, @background-image){
+  .pricing-heading{
+    color: #fff;
+    background-color: @background-color - 17;
+
+    &:after{
+      border-top-color: @background-color - 17;
+    }
+
+    .label{
+      border-color: #fff;
+    }
+  }
+
+  .pricing-body{
+    color: #fff;
+    background-image: url("@{img-path}/@{background-image}.png");
+  }
+}
+
+.transition(@property: all, @duration: 0.2s, @effect: ease-out){
+  -webkit-transition: @property @duration @effect;
+  -moz-transition: @property @duration @effect;
+  -ms-transition: @property @duration @effect;
+  -o-transition: @property @duration @effect;
+  transition: @property @duration @effect;
+}
+
+.gradient(@top: #f6f6f6, @bottom: #efefef){
+  background: @top;
+  background: -moz-linear-gradient(top, @top 0%, @bottom 100%) no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @top), color-stop(100%, @bottom)) no-repeat;
+  background: -webkit-linear-gradient(top, @top 0%, @bottom 100%) no-repeat;
+  background: -o-linear-gradient(top, @top 0%, @bottom 100%) no-repeat;
+  background: -ms-linear-gradient(top, @top 0%, @bottom 100%) no-repeat;
+  background: linear-gradient(to bottom, @top 0%, @bottom 100%) no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{top}', endColorstr='@{bottom}', GradientType=0);
+}

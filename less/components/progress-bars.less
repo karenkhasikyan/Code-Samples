@@ -1,0 +1,47 @@
+// Progress bars
+
+.progress{
+	height: 18px;
+	margin-bottom: 18px;
+	border-radius: 0;
+}
+
+.progress-bar{
+	line-height: 18px;
+	font-size: @font-size-sm - 1;
+	background-color: @progress-bar-bg;
+}
+
+.progress-lg{
+	height: 27px;
+
+	.progress-bar{
+		line-height: 24px;
+		font-size: @font-size-lg - 1;
+	}
+}
+
+.progress-sm{
+	height: 16px;
+
+	> .progress-bar{
+		line-height: 13px;
+		font-size: @font-size-sm - 2;
+	}
+}
+
+.progress-bar-success{
+	background-color: @progress-bar-success-bg;
+}
+
+.progress-bar-info{
+	background-color: @progress-bar-info-bg;
+}
+
+.progress-bar-warning{
+	background-color: @progress-bar-warning-bg;
+}
+
+.progress-bar-danger{
+	background-color: @progress-bar-danger-bg;
+}

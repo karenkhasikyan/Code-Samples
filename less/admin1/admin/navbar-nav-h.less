@@ -1,0 +1,115 @@
+.navbar-top{
+	/* Horizontal nav */
+	.navbar-h{
+		@media(max-width: @screen-sm-max){
+			display: none;
+		}
+
+		@media(min-width: @screen-sm-min){
+			margin-left: 30px;
+
+			.has-sidebar-sm &{
+				margin-left: 15px;
+			}
+
+			> li > a{
+				font-weight: 300;
+				font-size: @font-size-base + 1;
+			}
+
+			.dropdown-menu{
+				width: auto;
+				margin-top: 0;
+				.border-top-radius(0);
+
+				.dropdown-header{
+					padding: @navbar-nav-h-dropdown-menu-header-padding;
+					font-size: @font-size-base;
+					text-transform: uppercase;
+					border-bottom: none;
+				}
+
+				li > a{
+					display: block;
+					padding: @navbar-nav-h-dropdown-menu-link-padding;
+					font-weight: 300;
+					font-size: @font-size-base + 1;
+					white-space: normal;
+				}	
+			}
+
+			.dropdown-sm > .dropdown-menu{
+				min-width: @dropdown-menu-width + 15;
+				padding-top: 5px;
+				padding-bottom: 5px;
+
+				li > a > i{
+					margin-top: 3px;
+					margin-right: -5px;
+					float: right;
+				}
+
+				.dropdown-menu{
+					min-width: @dropdown-menu-width + 15;
+					top: 0;
+					left: 100%;
+				}
+
+				.dropdown:hover > .dropdown-menu{
+					display: block;
+				}
+			}
+
+			.dropdown-lg{
+				position: static;
+
+				.dropdown-menu{
+					left: @navbar-header-width + 45;
+
+					.has-sidebar-sm &{
+						left: @sidebar-sm-width + 10;
+					}
+
+					.dropdown-menu-item{
+						width: @navbar-nav-h-dropdown-menu-item-width;
+						padding-top: 10px;
+						padding-bottom: 15px;
+						padding-left: 0;
+						list-style: none;
+						float: left;
+
+						& + .dropdown-menu-item{
+							border-left: 1px solid transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sidebar-nav-h{
+	/* Horizontal nav in sidebar */
+	@media(min-width: @screen-md-min){
+		display: none;
+	}
+
+	.dropdown-lg > .inner-nav{
+		.dropdown-menu-item{
+			list-style: none;
+			padding-left: 0;
+
+			> .dropdown-header{
+				font-size: @font-size-base + 2;
+				border-bottom: none;
+				background-color: transparent;
+			}
+
+			> li > a{
+				display: block;
+				padding: @sidebar-inner-nav-link-padding;
+				letter-spacing: .2px;
+			}
+		}
+	}
+}

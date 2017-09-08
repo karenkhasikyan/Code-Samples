@@ -1,0 +1,553 @@
+// Buttons
+// General buttons, outline buttons, hexagon buttons, labeled buttons.
+
+.btn{
+	padding: 7px 13px;
+	margin-bottom: 5px;
+	font-size: @font-size-base;
+	border-radius: 0;
+	background-color: transparent;
+	.transition();
+
+	&:focus,
+	&.focus,
+	&.active:focus,
+	&.active.focus,
+	&:active:focus,
+	&.focus:active{
+		outline: none;
+	}
+}
+
+.btn-block + .btn-block{
+	margin-top: 0;
+}
+
+.btn.active,
+.btn:active,
+.open > .dropdown-toggle{
+	.box-shadow(0 2px 5px rgba(0, 0, 0, 0.09) inset);
+}
+
+// General buttons
+// .btn-default color scheme is slightly different than the other buttons'. That's why there is no need to call a mixin.
+.btn-default{
+	color: @btn-default-color;
+	border-color: @btn-default-border;
+	background-color: @btn-default-bg;
+
+	&:hover,
+	&:focus,
+	&.focus{
+		color: @btn-default-color;
+		border-color: @btn-default-border - 10;
+		background-color: @btn-default-bg - 10;
+	}
+
+	&:active,
+	&.active,
+	.open > .dropdown-toggle&{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			color: @btn-default-color;
+			border-color: @btn-default-border - 10;
+			background-color: @btn-default-bg - 10;
+		}
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] &{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			border-color: @btn-default-border - 20;
+			background-color: @btn-default-bg - 20;
+		}
+	}
+
+	.badge{
+		border-color: transparent;
+		background-color: darken(@btn-default-bg, 15%);
+	}
+}
+
+.btn-primary{
+	.button-variant-general(@btn-primary-color, @btn-primary-border, @btn-primary-bg);
+}
+
+.btn-success{
+	.button-variant-general(@btn-success-color, @btn-success-border, @btn-success-bg);
+}
+
+.btn-info{
+	.button-variant-general(@btn-info-color, @btn-info-border, @btn-info-bg);
+}
+
+.btn-warning{
+	.button-variant-general(@btn-warning-color, @btn-warning-border, @btn-warning-bg);
+}
+
+.btn-danger{
+	.button-variant-general(@btn-danger-color, @btn-danger-border, @btn-danger-bg);
+}
+
+.btn-inverse{
+	.button-variant-general(@btn-inverse-color, @btn-inverse-border, @btn-inverse-bg);
+}
+
+.btn-link{
+	color: @text-color-base;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active{
+		color: inherit;
+	}
+
+	&[disabled],
+	fieldset[disabled] &{
+		&:hover,
+		&:focus{
+			color: inherit;
+		}
+	}
+}
+
+// Outline buttons with transparent backgrounds
+// .btn-default-outline color scheme is slightly different than the other outline buttons'. That's why there is no need to call a mixin.
+.btn-default-outline{
+	color: @btn-default-color;
+	border-color: @btn-default-border;
+	background-color: #fff;
+
+	&:hover,
+	&:focus,
+	&.focus{
+		color: @btn-default-color;
+		background-color: @btn-default-bg;
+	}
+
+	&:active,
+	&.active,
+	.open > .dropdown-toggle&{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			color: @btn-default-color;
+			background-color: @btn-default-bg;
+		}
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] &{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			background-color: #fff;
+		}
+	}
+}
+
+.btn-primary-outline{
+	.button-variant-outline(@btn-primary-bg);
+}
+
+.btn-success-outline{
+	.button-variant-outline(@btn-success-bg);
+}
+
+.btn-info-outline{
+	.button-variant-outline(@btn-info-bg);
+}
+
+.btn-warning-outline{
+	.button-variant-outline(@btn-warning-bg);
+}
+
+.btn-danger-outline{
+	.button-variant-outline(@btn-danger-bg);
+}
+
+.btn-inverse-outline{
+	.button-variant-outline(@btn-inverse-bg);
+}
+
+.btn-link-outline{
+	border-color: @btn-default-border;
+	background-color: transparent;
+
+	&:extend(.btn-link);
+
+	&:hover,
+	&:focus{
+		color: inherit;
+		text-decoration: underline;
+	}
+
+	&[disabled],
+	fieldset[disabled] &{
+		&:hover,
+		&:focus{
+			color: inherit;
+		}
+	}
+}
+
+.btn-default-outline,
+.btn-primary-outline,
+.btn-success-outline,
+.btn-info-outline,
+.btn-warning-outline,
+.btn-danger-outline,
+.btn-inverse-outline{
+	.flat-shadow{
+		.flat-shadow(rgba(0, 0, 0, .03));
+	}
+}
+
+// General buttons sizing
+.btn-lg{
+	padding: 8px 12px;
+	font-size: @font-size-lg - 1;
+}
+
+.btn-sm{
+	padding: 5px 10px;
+	font-size: @font-size-sm;
+}
+
+.btn-xs{
+	padding: 3px 8px;
+	font-size: @font-size-sm - 1;
+}
+
+// Hexagon buttons
+.btn-hexagon{
+	.button-hexagon-size(@btn-base-hexagon-width, @font-size-base - 2);
+	position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  border-top: none;
+  border-bottom: none;
+  background-color: none;
+
+  &:before,
+  &:after{
+  	content: "";
+    position: absolute;
+    background-color: inherit;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+  }
+
+  &:before{
+  	border-top: 1.4142px solid transparent;
+    border-right: 1.4142px solid transparent;
+  }
+
+  &:after{
+  	border-bottom: 1.4142px solid transparent;
+    border-left: 1.4142px solid transparent;
+  }
+
+  > span{
+  	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+// General hexagon buttons
+// .btn-hexagon-default color scheme is slightly different than the other hexagon buttons'. That's why there is no need to call a mixin.
+.btn-hexagon-default{
+	color: @btn-default-color;
+	border-color: @btn-default-border;
+	background-color: @btn-default-bg;
+
+	&:before{
+    border-top: 1.4142px solid @btn-default-border;
+    border-right: 1.4142px solid @btn-default-border;
+  }
+
+  &:after{
+    border-bottom: 1.4142px solid @btn-default-border;
+    border-left: 1.4142px solid @btn-default-border;
+  }
+
+	&:hover,
+	&:focus,
+	&.focus{
+		color: @btn-default-color;
+		border-color: @btn-default-border - 10;
+		background-color: @btn-default-bg - 10;
+	}
+
+	&:active,
+	&.active,
+	.open > .dropdown-toggle&{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			color: @btn-default-color;
+			border-color: @btn-default-border - 10;
+			background-color: @btn-default-bg - 10;
+		}
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] &{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			border-color: @btn-default-border - 20;
+			background-color: @btn-default-bg - 20;
+		}
+	}
+}
+
+.btn-hexagon-primary{
+	.button-hexagon-variant-general(@btn-primary-color, @btn-primary-border, @btn-primary-bg);
+}
+
+.btn-hexagon-success{
+	.button-hexagon-variant-general(@btn-success-color, @btn-success-border, @btn-success-bg);
+}
+
+.btn-hexagon-info{
+	.button-hexagon-variant-general(@btn-info-color, @btn-info-border, @btn-info-bg);
+}
+
+.btn-hexagon-warning{
+	.button-hexagon-variant-general(@btn-warning-color, @btn-warning-border, @btn-warning-bg);
+}
+
+.btn-hexagon-danger{
+	.button-hexagon-variant-general(@btn-danger-color, @btn-danger-border, @btn-danger-bg);
+}
+
+.btn-hexagon-inverse{
+	.button-hexagon-variant-general(@btn-inverse-color, @btn-inverse-border, @btn-inverse-bg);
+}
+
+// Outline hexagon buttons
+// .btn-hexagon-default-outline color scheme is slightly different than the other hexagon outline buttons'. That's why there is no need to call a mixin.
+.btn-hexagon-default-outline{
+	color: @btn-default-color;
+	border-color: @btn-default-border;
+	background-color: transparent;
+
+	&:before{
+    border-top: 1.4142px solid @btn-default-border;
+    border-right: 1.4142px solid @btn-default-border;
+  }
+
+  &:after{
+    border-bottom: 1.4142px solid @btn-default-border;
+    border-left: 1.4142px solid @btn-default-border;
+  }
+
+	&:hover,
+	&:focus,
+	&.focus{
+		color: @btn-default-color;
+		background-color: @btn-default-bg;
+	}
+
+	&:active,
+	&.active,
+	.open > .dropdown-toggle&{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			color: @btn-default-color;
+			background-color: @btn-default-bg;
+		}
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] &{
+		&,
+		&:hover,
+		&:focus,
+		&.focus{
+			background-color: transparent;
+		}
+	}
+}
+
+.btn-hexagon-primary-outline{
+	.button-hexagon-variant-outline(@btn-primary-bg);
+}
+
+.btn-hexagon-success-outline{
+	.button-hexagon-variant-outline(@btn-success-bg);
+}
+
+.btn-hexagon-info-outline{
+	.button-hexagon-variant-outline(@btn-info-bg);
+}
+
+.btn-hexagon-warning-outline{
+	.button-hexagon-variant-outline(@btn-warning-bg);
+}
+
+.btn-hexagon-danger-outline{
+	.button-hexagon-variant-outline(@btn-danger-bg);
+}
+
+.btn-hexagon-inverse-outline{
+	.button-hexagon-variant-outline(@btn-inverse-bg);
+}
+
+.btn-hexagon-default-outline,
+.btn-hexagon-primary-outline,
+.btn-hexagon-success-outline,
+.btn-hexagon-info-outline,
+.btn-hexagon-warning-outline,
+.btn-hexagon-danger-outline,
+.btn-hexagon-inverse-outline{
+  .transition(none);
+}
+
+// Hexagon buttons sizing
+.btn-lg.btn-hexagon{
+	.button-hexagon-size(@btn-lg-hexagon-width, @font-size-lg);
+}
+
+.btn-sm.btn-hexagon{
+	.button-hexagon-size(@btn-sm-hexagon-width, @font-size-sm - 1);
+}
+
+.btn-xs.btn-hexagon{
+	.button-hexagon-size(@btn-xs-hexagon-width, @font-size-sm - 2);
+}
+
+// Labeled buttons
+.btn-labeled-left,
+.btn-labeled-right{
+	overflow: hidden;
+	position: relative;
+
+	> i{
+		width: @btn-base-label-width;
+		line-height: 2.6;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin-top: auto;
+		margin-top: auto;
+		background-color: rgba(0, 0, 0, .07);
+	}
+}
+
+.btn-labeled-left{
+	&:not(.btn-block){
+		padding-left: @btn-base-label-width + 12px;
+	}
+
+	> i{
+		left: 0;
+	}
+}
+
+.btn-labeled-right{
+	&:not(.btn-block){
+		padding-right: @btn-base-label-width + 12px;
+	}
+
+	> i{
+		right: 0;
+	}
+}
+
+// Labeled buttons sizing
+.btn-lg{
+	&.btn-labeled-left{
+		&:not(.btn-block){
+			padding-left: @btn-lg-label-width + 12px;
+		}
+
+		> i{
+			width: @btn-lg-label-width;
+			line-height: 2.3;
+		}
+	}
+
+	&.btn-labeled-right{
+		&:not(.btn-block){
+			padding-right: @btn-lg-label-width + 12px;
+		}
+
+		> i{
+			width: @btn-lg-label-width;
+			line-height: 2.3;
+		}
+	}
+}
+
+.btn-sm{
+	&.btn-labeled-left{
+		&:not(.btn-block){
+			padding-left: @btn-sm-label-width + 10px;
+		}
+
+		> i{
+			width: @btn-sm-label-width;
+			line-height: 2.2;
+		}
+	}
+
+	&.btn-labeled-right{
+		&:not(.btn-block){
+			padding-right: @btn-sm-label-width + 10px;
+		}
+
+		> i{
+			width: @btn-sm-label-width;
+			line-height: 2.2;
+		}
+	}
+}
+
+.btn-xs{
+	&.btn-labeled-left{
+		&:not(.btn-block){
+			padding-left: @btn-xs-label-width + 8px;
+		}
+
+		> i{
+			width: @btn-xs-label-width;
+			line-height: 2;
+		}
+	}
+
+	&.btn-labeled-right{
+		&:not(.btn-block){
+			padding-right: @btn-xs-label-width + 8px;
+		}
+
+		> i{
+			width: @btn-xs-label-width;
+			line-height: 2;
+		}
+	}
+}

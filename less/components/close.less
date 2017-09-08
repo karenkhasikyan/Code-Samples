@@ -1,0 +1,21 @@
+.close{
+	opacity: .6;
+	font-size: @font-size-lg + 4;
+	font-weight: 300;
+	text-shadow: none;
+	color: inherit;
+
+	.bg-success &,
+	.bg-info &,
+	.bg-warning &,
+	.bg-danger &,
+	.bg-inverse &{
+		color: #fff;
+	}
+
+	&:hover,
+	&:focus{
+		opacity: 1;
+		color: inherit;
+	}
+}

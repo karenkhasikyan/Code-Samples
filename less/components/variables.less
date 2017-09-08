@@ -1,0 +1,382 @@
+// Brand colors
+@brand-default:     		#f1f2f2;
+@brand-primary:     		#5ebdec;
+@brand-success:     		#4ec27f;
+@brand-info:        		#51c2cf;
+@brand-warning:     		#F9B56A;
+@brand-danger:      		#EE6567;
+@brand-inverse:     		#474F60;
+
+// Background colors
+@bg-default:            @brand-default;
+@bg-primary:     				@brand-primary;
+@bg-success:     				@brand-success;
+@bg-info:        				@brand-info;
+@bg-warning:     				@brand-warning;
+@bg-danger:      				@brand-danger;
+@bg-inverse:     				@brand-inverse;
+
+//Image path
+@img-path: "../img";
+
+// Typography
+@font-family-base: 			'Open Sans', sans-serif;
+@text-color-base: 			#474747;
+
+@link-color: 						#2f97db;
+@link-hover-color: 			#2f97db;
+
+@font-size-base: 	 			13px;
+@font-size-lg:          17px;
+@font-size-sm:          12px;
+
+@font-size-h1:      		30px;
+@font-size-h2:      		24px;
+@font-size-h3:      		20px;
+@font-size-h4:      		18px;
+@font-size-h5:      		15px;
+@font-size-h6:      		13px;
+@font-size-lead: 				16px;
+@font-size-blockquote:	14px;
+
+@text-muted:            #909497;
+@text-primary:          @brand-primary;
+@text-success:          @brand-success;
+@text-info:             @brand-info;
+@text-warning:          @brand-warning;
+@text-danger:           @brand-danger;
+@text-inverse:          @brand-inverse;
+
+@rounded: 							4px;
+@circle: 								25px;
+
+@border-bold-width: 3px;
+
+// Buttons
+@btn-default-color:        @text-color-base;
+@btn-default-border:       @bg-default - 7;
+@btn-default-bg:           @bg-default;
+
+@btn-primary-color:        #fff;
+@btn-primary-border:       @bg-primary - 17;
+@btn-primary-bg:           @bg-primary;
+
+@btn-success-color:        #fff;
+@btn-success-border:       @bg-success - 17;
+@btn-success-bg:           @bg-success;
+
+@btn-info-color:         	 #fff;
+@btn-info-border:          @bg-info - 17;
+@btn-info-bg:              @bg-info;
+
+@btn-warning-color:        #fff;
+@btn-warning-border:       @bg-warning - 17;
+@btn-warning-bg:           @bg-warning;
+
+@btn-danger-color:         #fff;
+@btn-danger-border:        @bg-danger - 17;
+@btn-danger-bg:            @bg-danger;
+
+@btn-inverse-color:        #fff;
+@btn-inverse-border:       @bg-inverse - 17;
+@btn-inverse-bg:           @bg-inverse;
+
+// Labeled buttons
+@btn-base-label-width: 38px;
+@btn-lg-label-width: 42px;
+@btn-sm-label-width: 35px;
+@btn-xs-label-width: 30px;
+
+// Hexagon buttons
+@btn-base-hexagon-width:   28px;
+@btn-lg-hexagon-width: 34px;
+@btn-sm-hexagon-width: 26px;
+@btn-xs-hexagon-width: 22px;
+
+// Button groups
+@btn-group-base-divider-width:   	  25px;
+@btn-group-base-divider-height:  	  25px;
+@btn-group-base-divider-border:     #ddd;
+@btn-group-base-divider-bg:      	  @brand-default;
+
+@btn-group-lg-divider-width:   	30px;
+@btn-group-lg-divider-height:  	30px;
+
+@btn-group-sm-divider-width:   	23px;
+@btn-group-sm-divider-height:  	23px;
+
+@btn-group-xs-divider-width:   	18px;
+@btn-group-xs-divider-height:  	18px;
+
+//Labels
+@label-default-bg: @brand-default;
+@label-primary-bg: @brand-primary;
+@label-success-bg: @brand-success;
+@label-info-bg:    @brand-info;
+@label-warning-bg: @brand-warning;
+@label-danger-bg:  @brand-danger;
+@label-inverse-bg: @brand-inverse;
+
+
+// Panels
+@panel-heading-height:             35px;
+@panel-heading-action-width:       80px;
+
+// Large heading height of panels
+@panel-large-heading-height:       40px;
+
+@panel-default-border: @bg-default;
+@panel-default-heading-color: #888;
+@panel-default-heading-bg: #f6f6f6;
+@panel-default-footer-color: #888;
+@panel-default-footer-bg: @panel-default-heading-bg;
+
+@panel-primary-border: @bg-primary;
+@panel-primary-heading-color: #fff;
+@panel-primary-heading-bg: @bg-primary;
+@panel-primary-footer-color: #fff;
+@panel-primary-footer-bg: @bg-primary;
+
+@panel-success-border: @bg-success;
+@panel-success-heading-color: #fff;
+@panel-success-heading-bg: @bg-success;
+@panel-success-footer-color: #fff;
+@panel-success-footer-bg: @bg-success;
+
+@panel-info-border: @bg-info;
+@panel-info-heading-color: #fff;
+@panel-info-heading-bg: @bg-info;
+@panel-info-footer-color: #fff;
+@panel-info-footer-bg: @bg-info;
+
+@panel-warning-border: @bg-warning;
+@panel-warning-heading-color: #fff;
+@panel-warning-heading-bg: @bg-warning;
+@panel-warning-footer-color: #fff;
+@panel-warning-footer-bg: @bg-warning;
+
+@panel-danger-border: @bg-danger;
+@panel-danger-heading-color: #fff;
+@panel-danger-heading-bg: @bg-danger;
+@panel-danger-footer-color: #fff;
+@panel-danger-footer-bg: @bg-danger;
+
+@panel-inverse-border: @bg-inverse;
+@panel-inverse-heading-color: #fff;
+@panel-inverse-heading-bg: @bg-inverse;
+@panel-inverse-footer-color: #fff;
+@panel-inverse-footer-bg: @bg-inverse;
+
+// Light panels
+@panel-light-default-heading-color: @text-color-base;
+@panel-light-default-heading-bg:    transparent;
+@panel-light-default-footer-color:  @text-color-base;
+@panel-light-default-footer-bg:     lighten(@bg-default, 2%);
+
+@panel-light-primary-heading-color: #fff;
+@panel-light-primary-heading-bg:    @bg-primary;
+@panel-light-primary-footer-color:  #fff;
+@panel-light-primary-footer-bg:     @bg-primary;
+
+@panel-light-success-heading-color: #fff;
+@panel-light-success-heading-bg:    @bg-success;
+@panel-light-success-footer-color:  #fff;
+@panel-light-success-footer-bg:     @bg-success;
+
+@panel-light-info-heading-color: #fff;
+@panel-light-info-heading-bg:    @bg-info;
+@panel-light-info-footer-color:  #fff;
+@panel-light-info-footer-bg:     @bg-info;
+
+@panel-light-warning-heading-color: #fff;
+@panel-light-warning-heading-bg:    @bg-warning;
+@panel-light-warning-footer-color:  #fff;
+@panel-light-warning-footer-bg:     @bg-warning;
+
+@panel-light-danger-heading-color: #fff;
+@panel-light-danger-heading-bg:    @bg-danger;
+@panel-light-danger-footer-color:  #fff;
+@panel-light-danger-footer-bg:     @bg-danger;
+
+@panel-light-inverse-heading-color: #fff;
+@panel-light-inverse-heading-bg:    @bg-inverse;
+@panel-light-inverse-footer-color:  #fff;
+@panel-light-inverse-footer-bg:     @bg-inverse;
+
+// Scrollable panel height
+@panel-scrollable-height: 250px;
+
+// Tables
+@table-border:      darken(@bg-default, 2%);
+
+@table-active-bg:      #f6f6f6;
+@table-primary-bg: 		 darken(#DBEFF8, 3%);
+@table-success-bg: 		 darken(#DFF3E5, 3%);
+@table-info-bg: 		 	 darken(#DBF2F4, 3%);
+@table-warning-bg: 		 darken(#FFF0DA, 3%);
+@table-danger-bg: 		 darken(#FCDCDD, 3%);
+@table-inverse-bg: 		 #d5d7db;
+
+// Alerts
+@alert-icon-width: 50px;
+@alert-icon-bg: rgba(255, 255, 255, .35);
+
+@alert-success-bg: #DFF3E5;
+@alert-info-bg:    #DBF2F4;
+@alert-warning-bg: #FFF0DA;
+@alert-danger-bg:  #FCDCDD;
+
+// Navs
+@nav-link-hover-bg: lighten(@bg-default, 1%);
+@nav-link-disabled-color: lighten(@text-color-base, 35%);
+
+// Tabs
+@nav-tabs-border: darken(@bg-default, 5%);
+
+// Solid tabs
+@tabs-solid-border: @bg-default - 8;
+@tabs-solid-bg: @bg-default;
+
+// Underline and overline tabs
+@tabs-default-border: darken(@bg-default, 5%);
+@tabs-primary-border: @bg-primary;
+@tabs-success-border: @bg-success;
+@tabs-info-border: @bg-info;
+@tabs-warning-border: @bg-warning;
+@tabs-danger-border: @bg-danger;
+@tabs-inverse-border: @bg-inverse;
+
+// Modals
+@modal-frame-width: 4px;
+@modal-frame-bg: rgba(0, 0, 0, 0.09);
+
+// Forms
+@input-color: #999;
+@input-border: darken(@bg-default, 5%);
+
+@input-disabled-bg:   #f6f6f6;
+
+// Addon
+@input-addon-width: 39px;
+@input-addon-bg: #f7f7f7;
+
+// Validation states
+@state-success-color:    darken(@text-success, 15%);
+@state-success-border:   darken(@bg-success, 5%);
+@state-success-bg:       #DFF3E5;
+
+@state-warning-color:    darken(@text-warning, 25%);
+@state-warning-border:   darken(@bg-warning, 5%);
+@state-warning-bg:       #FFF0DA;
+
+@state-danger-color:     darken(@text-danger, 20%);
+@state-danger-border:    darken(@bg-danger, 5%);
+@state-danger-bg:        #FCDCDD;
+
+// Dropdowns
+@dropdown-menu-width: 195px;
+@dropdown-menu-border: #e5e5e5;
+
+// Progress bars
+@progress-bar-bg:           @bg-primary;
+
+@progress-bar-success-bg:   @bg-success;
+@progress-bar-info-bg:      @bg-info;
+@progress-bar-warning-bg:   @bg-warning;
+@progress-bar-danger-bg:    @bg-danger;
+
+// List groups
+@list-group-item-border:         darken(@bg-default, 5%);
+@list-group-item-hover-bg:       @nav-link-hover-bg;
+@list-group-item-active-bg:      @nav-link-hover-bg;
+
+@list-group-item-disabled-color: @nav-link-disabled-color;
+
+@list-group-item-success-border:    darken(@alert-success-bg, 5%);
+@list-group-item-success-bg: 		    @alert-success-bg;
+@list-group-item-success-active-bg: @bg-success;
+
+@list-group-item-info-border:       darken(@alert-info-bg, 5%);
+@list-group-item-info-bg: 		 	    @alert-info-bg;
+@list-group-item-info-active-bg: 		@bg-info;
+
+@list-group-item-warning-border:    darken(@alert-warning-bg, 5%);
+@list-group-item-warning-bg: 		    @alert-warning-bg;
+@list-group-item-warning-active-bg: @bg-warning;
+
+@list-group-item-danger-border:     darken(@alert-danger-bg, 5%);
+@list-group-item-danger-bg: 		    @alert-danger-bg;
+@list-group-item-danger-active-bg: 	@bg-danger;
+
+// Default navbar
+@navbar-default-bg: lighten(@bg-default, 2%);
+@navbar-default-border: @bg-default;
+@navbar-default-brand-color: #8b8e90;
+@navbar-default-link-color:  #85898b;
+@navbar-default-link-hover-bg: darken(@bg-default, 1%);
+@navbar-default-link-active-bg: darken(@navbar-default-link-hover-bg, 3%);
+@navbar-default-link-disabled-color: @nav-link-disabled-color;
+
+// Inverse navbar
+@navbar-inverse-bg: lighten(@bg-inverse, 2%);
+@navbar-inverse-border: @bg-inverse;
+@navbar-inverse-brand-color: #f0f1f3;
+@navbar-inverse-link-color:  #eaecef;
+@navbar-inverse-link-hover-bg: lighten(@text-inverse, 7%);
+@navbar-inverse-link-active-bg: lighten(@bg-inverse, 10%);
+@navbar-inverse-link-disabled-color: #a7aaab;
+
+// Wells
+@well-border: darken(@bg-default, 5%);
+@well-bg: @bg-default;
+
+// Thumbnails
+@thumbnail-border: darken(@bg-default, 5%);
+
+// Pagination
+@pagination-border: #EAEBEB;
+@pagination-hover-bg:     #fff;
+@pagination-active-bg:    #fff;
+
+@pagination-disabled-color: #999;
+@pagination-disabled-bg:   @bg-default;
+@pagination-disabled-border: #EAEBEB;
+
+// Additional components
+// Steps
+@step-grey-bg: @bg-default;
+// Contextual backgrounds
+@step-primary-bg: @bg-primary;
+@step-success-bg: @bg-success;
+@step-info-bg: 		@bg-info;
+@step-warning-bg: @bg-warning;
+@step-danger-bg: 	@bg-danger;
+@step-inverse-bg: @bg-inverse;
+
+// Pricing
+@pricing-default-bg:           @bg-default;
+@pricing-primary-bg:           @bg-primary;
+@pricing-success-bg:           @bg-success;
+@pricing-info-bg:              @bg-info;
+@pricing-warning-bg:           @bg-warning;
+@pricing-danger-bg:            @bg-danger;
+@pricing-inverse-bg:           @bg-inverse;
+
+// Media queries breakpoints
+
+// Phone
+@screen-xs-min:              480px;
+
+// Tablet
+@screen-sm-min:              768px;
+
+// Desktop
+@screen-md-min:              992px;
+
+
+// Wide desktop
+@screen-lg-min:              1200px;
+
+@screen-xs-max:              767px;
+@screen-sm-max:              991px;
+@screen-md-max:              1199px;

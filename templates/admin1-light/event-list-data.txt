@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "title": "Corporate party night",
+      "date": "Today 23:00",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>M. Jacobson</span> <span class='label label-success-outline rounded'>A. Lighton</span> <span class='label label-success-outline rounded'>J. Sonarson</span> <span class='label label-success-outline rounded'>M. Lesley</span> <span class='label label-success-outline rounded'>N. Olaf</span> <span class='label label-success-outline rounded'>I. Nestor</span> <span class='label label-success-outline rounded'>L. Cooper</span> <span class='label label-success-outline rounded'>M. Gibson</span> <span class='label label-success-outline rounded'>E. Ackerman</span> <span class='label label-success-outline rounded'>H. Silverman</span>"
+    },
+    {
+      "title": "Products promotion monthly discussion",
+      "date": "Jul 15 14:30",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>M. Gibson</span> <span class='label label-success-outline rounded'>E. Ackerman</span> <span class='label label-success-outline rounded'>H. Silverman</span>"
+    },
+    {
+      "title": "M. Ericsson birthday party",
+      "date": "Jul 21 19:00",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>J. Sonarson</span> <span class='label label-success-outline rounded'>M. Lesley</span> <span class='label label-success-outline rounded'>N. Olaf</span> <span class='label label-success-outline rounded'>I. Nestor</span> <span class='label label-success-outline rounded'>L. Cooper</span> <span class='label label-success-outline rounded'>M. Gibson</span>"
+    },
+    {
+      "title": "Lorem ipsum dolor sit amet",
+      "date": "Sep 1 12:00",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>N. Olaf</span> <span class='label label-success-outline rounded'>I. Nestor</span> <span class='label label-success-outline rounded'>L. Cooper</span> <span class='label label-success-outline rounded'>M. Gibson</span> <span class='label label-success-outline rounded'>E. Ackerman</span> <span class='label label-success-outline rounded'>H. Silverman</span>"
+    },
+    {
+      "title": "Class aptent taciti sociosqu ad litora",
+      "date": "Sep 5 18:25",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>J. Sonarson</span> <span class='label label-success-outline rounded'>M. Lesley</span>"
+    },
+    {
+      "title": "Class aptent taciti sociosqu ad litora",
+      "date": "Sep 21 19:10",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>M. Gibson</span> <span class='label label-success-outline rounded'>E. Ackerman</span> <span class='label label-success-outline rounded'>H. Silverman</span>"
+    },
+    {
+      "title": "Lorem ipsum discussion",
+      "date": "Jul 22 11:30",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et incididunt",
+      "invited": "<span class='label label-success-outline rounded'>M. Gibson</span> <span class='label label-success-outline rounded'>E. Ackerman</span> <span class='label label-success-outline rounded'>H. Silverman</span>"
+    }
+  ]
+}

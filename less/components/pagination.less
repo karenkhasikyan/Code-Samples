@@ -1,0 +1,125 @@
+// Paginaiton, pager
+
+// General styles for pagination
+.pagination{
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	> li{
+		> a,
+		> span{
+			color: @text-color-base;
+			border-color: @pagination-border;
+			.gradient(#fdfdfd, #f7f7f7);
+
+			&:hover,
+			&:focus{
+				color: #5583A7;
+				border-color: @pagination-border;
+				background-color: @pagination-hover-bg;
+				background-image: none;
+			}
+		}
+
+		&:first-child{
+      > a,
+      > span{
+        .border-left-radius(0);
+
+        .rounded&{
+        	.border-left-radius();
+        }
+
+        .circle&{
+        	.border-left-radius(@circle);
+        }
+      }
+    }
+
+    &:last-child{
+      > a,
+      > span{
+        .border-right-radius(0);
+
+        .rounded&{
+        	.border-right-radius();
+        }
+
+        .circle&{
+        	.border-right-radius(@circle);
+        }
+      }
+    }
+
+		&.active > a,
+		&.active > span{
+			&,
+	    &:hover,
+	    &:focus{
+	    	color: #5583A7;
+	    	border-color: @pagination-border;
+	    	background-color: @pagination-active-bg;
+	    	background-image: none;
+			}
+		}
+
+		&.disabled > a,
+		&.disabled > span{
+	    &,
+	    &:hover,
+	    &:focus{
+	      color: @pagination-disabled-color;
+	      border-color: @pagination-disabled-border;
+	      background-color: @pagination-disabled-bg;
+	      background-image: none;
+	    }
+	  }
+	}
+}
+
+.pagination-lg{
+	> li{
+		> a,
+		> span{
+			padding: 6px 14px;
+			font-weight: 300;
+			font-size: @font-size-lg;
+		}
+	}
+}
+
+// General styles for pager
+.pager{
+	li{
+		> a,
+    > span{
+    	padding: 6px 15px;
+    	color: @text-color-base;
+    	border-radius: 0;
+    	border-color: @pagination-border;
+
+    	.rounded&{
+    		&:extend(.rounded);
+    	}
+
+    	.circle&{
+    		&:extend(.circle);
+    	}
+
+    	&:hover,
+    	&:focus{
+    		background-color: @bg-default;
+    	}
+    }
+	}
+
+	.disabled{
+    > a,
+    > a:hover,
+    > a:focus,
+    > span{
+      color: @pagination-disabled-color;
+	    background-color: @pagination-disabled-bg;
+    }
+  }
+}

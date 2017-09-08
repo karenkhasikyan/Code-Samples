@@ -1,0 +1,35 @@
+/*	============================== 
+ 					Jquery-sortable-list
+		==============================	*/
+.sortable-list{
+	&.list-group ul{
+		padding-top: 10px;
+	}
+
+	.list-group-item{
+		cursor: pointer;
+	}
+}
+
+.sortable-item-opener{
+	line-height: 1;
+	font-size: @font-size-lg + 2;
+	margin-right: 10px;
+	float: none;
+}
+
+// Dragging state
+.sortable-item-placeholder{
+	background-color: @bg-default;
+}
+
+// Hint class (shows the possible future position of dragged item)
+.sortable-item-hint{
+	background-color: @alert-warning-bg;
+}
+
+// Active item (currently dragged element)
+.sortable-item-active{
+	border-style: dashed;
+	border-color: darken(@list-group-item-border, 15%);
+}

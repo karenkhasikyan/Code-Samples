@@ -1,0 +1,17 @@
+/*	============================== 
+ 					Multi-select
+		==============================	*/
+
+.ms-container{
+	.ms-list.ms-focus{
+		border-color: darken(@input-border, 25%);
+	}
+
+	.ms-selectable li,
+	.ms-selection li{
+		&.ms-hover{
+			color: inherit;
+			background-color: lighten(@bg-default, 1%);
+		}
+	}
+}

@@ -1,0 +1,317 @@
+// Form elements
+// Input, input group, select, radio, checkbox, inline form, horizontal form, label, legend, validation states
+
+// General styles for inputs
+label{
+	font-weight: 400;
+}
+
+legend{
+	font-size: @font-size-lg + 1;
+	color: @text-color-base;
+	border-bottom-color: @bg-default;
+}
+
+.form-control{
+	height: 35px;
+	padding: 7px 13px;
+	font-size: @font-size-base;
+	color: @input-color;
+	border-color: @input-border;
+	border-radius: 0;
+	.box-shadow(none);
+	appearance:	none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	&:focus{
+		border-color: darken(@input-border, 25%);
+		.box-shadow(none);
+	}
+
+	&[disabled],
+  &[readonly],
+  fieldset[disabled] &{
+    background-color: @input-disabled-bg;
+  }
+}
+
+select[multiple].form-control.circle,
+textarea.form-control.circle{
+	border-radius: @circle - 15 !important;
+}
+
+.radio,
+.checkbox{
+	label{
+		padding-left: 0;
+	}
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"]{
+  position: static;
+  margin-left: 0;
+}
+
+.checkbox-inline,
+.radio-inline{
+	padding-left: 0;
+}
+
+// Input with icon
+.input-icon-left,
+.input-icon-right{
+	position: relative;
+	color: #999;
+
+	.input-icon{
+		width: 20px;
+		height: 13px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+
+		.input-group&{
+			z-index: 3;
+		}
+	}
+}
+
+// Icon left
+.input-icon-left{
+	.form-control{
+		padding-left: 35px;
+	}
+
+	.input-icon{
+		left: 12px;
+	}
+}
+
+// Icon right
+.input-icon-right{
+	.form-control{
+		padding-right: 35px;
+	}
+
+	.input-icon{
+		right: 12px;
+		text-align: right;
+	}
+}
+
+// Form control feedback states
+.has-feedback .form-control{
+	padding-right: 35px;
+}
+
+.form-control-feedback{
+	width: 35px;
+	height: 35px;
+	line-height: 30px;
+}
+
+// Feedback icon for inputs sizing
+.input-lg + .form-control-feedback,
+.input-group-lg + .form-control-feedback,
+.form-group-lg + .form-control + .form-control-feedback{
+	width: 35px;
+	height: 40px;
+	line-height: 35px;
+}
+
+.input-sm + .form-control-feedback,
+.input-group-sm + .form-control-feedback,
+.form-group-sm + .form-control + .form-control-feedback{
+	width: 35px;
+	height: 32px;
+	line-height: 27px;
+}
+
+// Input Sizing
+.input-lg{
+	height: 40px;
+	padding: 6px 13px;
+	font-size: @font-size-lg - 1;
+
+	select&{
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+.form-group-lg{
+	.form-control{
+		&:extend(.input-lg);
+		border-radius: 0;
+	}
+
+	select.form-control{
+		&:extend(select.input-lg);
+	}
+
+	.form-control-static{
+		&:extend(.input-lg);
+	}
+}
+
+.input-sm{
+	height: 32px;
+  padding: 5px 10px;
+	font-size: @font-size-sm;
+
+	select&{
+		height: 32px;
+		line-height: 32px;
+	}
+}
+
+.form-group-sm{
+	.form-control{
+		&:extend(.input-sm);
+		border-radius: 0;
+	}
+
+	select.form-control{
+		&:extend(select.input-sm);
+	}
+
+	.form-control-static{
+		&:extend(.input-sm);
+	}
+}
+
+.help-block{
+	color: @text-muted;
+}
+
+// Inline form
+.form-inline .btn{
+	margin-bottom: 0;
+}
+
+// Horizontal form
+.form-horizontal{
+	.checkbox,
+	.radio{
+		& + .help-block{
+			margin-top: 10px;
+		}
+	}
+
+	.form-group-lg{
+		@media (min-width: @screen-sm-min){
+			.control-label{
+				font-size: @font-size-lg - 1;
+			}
+		}
+	}
+
+	.form-group-sm{
+		@media (min-width: @screen-sm-min){
+			.control-label{
+				font-size: @font-size-sm;
+			}
+		}
+	}
+}
+
+// General styles for input groups
+.input-group{
+	&[class*="col-"]{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	// Rounded corners
+	&.rounded{
+		> .form-control:first-child,
+		> .input-group-addon:first-child,
+		> .input-group-btn:first-child .btn:first-child{
+			.border-left-radius();
+		}
+
+		> .form-control:last-child,
+		> .input-group-addon:last-child,
+		> .input-group-btn:last-child .btn:last-of-type{
+			.border-right-radius();
+		}
+	}
+
+	// Circle corners
+	&.circle{
+		> .form-control:first-child,
+		> .input-group-addon:first-child,
+		> .input-group-btn:first-child .btn:first-child{
+			.border-left-radius(@circle);
+		}
+
+		> .form-control:last-child,
+		> .input-group-addon:last-child,
+		> .input-group-btn:last-child .btn:last-of-type{
+			.border-right-radius(@circle);
+		}
+	}
+
+	.input-group-btn .btn{
+		margin-bottom: 0;
+		height: 35px;
+	}
+
+	.input-group-addon{
+		padding: 7px 13px;
+		min-width: @input-addon-width;
+		font-size: @font-size-base;
+		color: @input-color;
+		border-color: @input-border;
+		border-radius: 0;
+		background-color: @input-addon-bg;
+
+		&.input-sm{
+			padding: 5px 10px;
+			font-size: @font-size-sm;
+		}
+
+		&.input-lg{
+			padding: 6px 13px;
+			font-size: @font-size-lg -1;
+		}
+	}
+
+	.form-control{
+		border-radius: 0;
+	}
+}
+
+// Sizing of input group
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn{
+  .input-lg();
+  border-radius: 0;
+}
+
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn{
+  .input-sm();
+  border-radius: 0;
+}
+
+// Validation classes
+.has-success{
+	.form-validation(@state-success-color, @state-success-border, @state-success-bg);
+}
+
+.has-warning{
+	.form-validation(@state-warning-color, @state-warning-border, @state-warning-bg);
+}
+
+.has-error{
+	.form-validation(@state-danger-color, @state-danger-border, @state-danger-bg);
+}

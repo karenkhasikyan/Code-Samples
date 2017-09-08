@@ -1,0 +1,18 @@
+// Thumbnail
+
+.thumbnail{
+	border-color: @thumbnail-border;
+	border-radius: 0;
+
+	.caption{
+		color: @text-color-base;
+	}
+
+	a&{
+		&.active,
+		&:hover,
+		&:focus{
+			border-color: darken(@thumbnail-border, 15%);
+		}
+	}
+}

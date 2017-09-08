@@ -1,0 +1,33 @@
+body.page-ecommerce-table .content .table-ecommerce{
+	> thead > tr > th,
+	> tbody > tr > td,
+	> tfoot > tr > td{
+		/* Orders table */
+		
+		&:first-child{
+			width: 43px;
+		}
+	}
+
+	> tfoot{
+		display: table-header-group;
+
+		> tr > td{
+			/* Styles for for td with form elements */
+			vertical-align: top;
+
+			.input-group{
+				width: 100%;
+			}
+
+			.input-group + .input-group,
+			.form-control + .form-control{
+				margin-top: 10px;
+			}
+
+			.select2-container{
+				width: 120px !important;
+			}
+		}
+	}
+}
